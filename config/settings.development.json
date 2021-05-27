@@ -9,5 +9,22 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+  "defaultUser": [
+    {
+      "firstName": "John",
+      "lastName": "Foo",
+      "password": "changeme",
+      "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
+      "owner": "john@foo.com"
+    },
+    {
+      "firstName": "Admin",
+      "lastName": "Foo",
+      "password": "changeme",
+      "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
+      "role": "admin",
+      "owner": "admin@foo.com"
+    }
   ]
 }
