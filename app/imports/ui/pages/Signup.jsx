@@ -60,13 +60,11 @@ class Signup extends React.Component {
               <Segment>
                 <Button as={NavLink} fluid color='orange' exact to='/signin'>Got an Account? Login Now</Button>
               </Segment>
-
               <Segment>
                 <AutoForm ref={ref => {
                   fRef = ref;
                 }} schema={formBridge} onSubmit={data => this.submit(data, fRef)}>
                   <Header as="h1" textAlign="left">Register</Header>
-                  <TextField name='image' placeholder='Profile Picture Link' iconLeft='image'/>
                   <Form.Group widths='equal'>
                     <TextField name='firstName' placeholder='Your first name' grid='equal'/>
                     <TextField name='lastName' placeholder='Your last name' grid='equal'/>
