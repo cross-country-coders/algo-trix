@@ -19,6 +19,7 @@ class UserInfoCollection extends BaseCollection {
       owner: String,
       password: String,
       userImage: String,
+      email: String,
     }));
   }
 
@@ -33,13 +34,14 @@ class UserInfoCollection extends BaseCollection {
    * @param zipcode the zipcode of the person.
    * @return {String} the docID of the new document.
    */
-  define({ firstName, lastName, owner, password, userImage }) {
+  define({ firstName, lastName, owner, password, email, userImage }) {
     const docID = this._collection.insert({
       firstName,
       lastName,
       owner,
       password,
       userImage,
+      email
     });
     return docID;
   }
@@ -54,7 +56,7 @@ class UserInfoCollection extends BaseCollection {
    * @param password the password of the person (optional).
    * @param zipcode the zipcode of the person (optional).
    */
-  update(docID, { firstName, lastName, password, userImage }) {
+  update(docID, { firstName, email, lastName, password, userImage }) {
     const updateData = {};
     if (firstName) {
       updateData.firstName = firstName;
@@ -69,6 +71,9 @@ class UserInfoCollection extends BaseCollection {
 
     if (userImage) {
       updateData.userImage = userImage;
+    }
+    if (email) {
+      updateData.email = email;
     }
 
     this._collection.update(docID, { $set: updateData });
