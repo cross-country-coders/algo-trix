@@ -16,10 +16,9 @@ class UserInfoCollection extends BaseCollection {
     super('UserInfos', new SimpleSchema({
       firstName: String,
       lastName: String,
-      owner: String,
+      _id: String,
       password: String,
       userImage: String,
-      email: String,
     }));
   }
 
@@ -29,19 +28,17 @@ class UserInfoCollection extends BaseCollection {
    * @param lastName the last name of the person.
    * @param user the user name of the person.
    * @param owner the owner of the item.
-   * @param email the email of the person.
    * @param password the password of the person.
    * @param zipcode the zipcode of the person.
    * @return {String} the docID of the new document.
    */
-  define({ firstName, lastName, owner, password, email, userImage }) {
+  define({ firstName, lastName, owner, password, userImage }) {
     const docID = this._collection.insert({
-      firstName,
-      lastName,
-      owner,
-      password,
-      userImage,
-      email
+      firstName: firstName,
+      lastName: lastName,
+      _id: owner,
+      password: password,
+      userImage: userImage,
     });
     return docID;
   }
@@ -70,10 +67,10 @@ class UserInfoCollection extends BaseCollection {
     }
 
     if (userImage) {
-      updateData.userImage = userImage;
+      updateData.image = userImage;
     }
     if (email) {
-      updateData.email = email;
+      updateData._id = email;
     }
 
     this._collection.update(docID, { $set: updateData });
@@ -103,7 +100,7 @@ class UserInfoCollection extends BaseCollection {
       Meteor.publish(userInfoPublications.userInfo, function publish() {
         if (this.userId) {
           const username = Meteor.users.findOne(this.userId).username;
-          return instance._collection.find({ owner: username });
+          return instance._collection.find({ _id: username });
         }
         return this.ready();
       });

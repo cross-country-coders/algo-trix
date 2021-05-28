@@ -1,9 +1,4 @@
 {
-  "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
-  ],
-
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
@@ -13,20 +8,18 @@
   "defaultUser": [
     {
       "firstName": "John",
-      "lastName": "Foo",
+      "lastName": "Temp",
       "password": "changeme",
       "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
-      "owner": "john@foo.com",
-      "email": "john@foo.com"
+      "owner": "john@foo.com"
     },
     {
       "firstName": "Admin",
-      "lastName": "Foo",
+      "lastName": "Command",
       "password": "changeme",
       "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
       "role": "admin",
-      "owner": "admin@foo.com",
-      "email": "admin@foo.com"
+      "owner": "admin@foo.com"
     }
   ]
 }
