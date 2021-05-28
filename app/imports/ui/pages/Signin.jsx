@@ -12,7 +12,7 @@ const formSchema = new SimpleSchema({
   password: String,
 });
 
-const formBrdige = new SimpleSchema2Bridge(formSchema);
+const formBridge = new SimpleSchema2Bridge(formSchema);
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -61,7 +61,7 @@ export default class Signin extends React.Component {
                 <Segment>
                   <AutoForm ref={ref => {
                     fRef = ref;
-                  }} schema={formBrdige} onSubmit={data => this.submit(data, fRef)}>
+                  }} schema={formBridge} onSubmit={data => this.submit(data, fRef)}>
                     <Header as="h1" textAlign="left">Login</Header>
                     <TextField name='email' placeholder='E-mail address' iconLeft='user'/>
                     <ErrorField name='email'><span>Please enter your Email!</span></ErrorField>
