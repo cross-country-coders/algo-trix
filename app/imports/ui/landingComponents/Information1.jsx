@@ -11,8 +11,8 @@ class Information1 extends React.Component {
     };
     return (
       <Container className='body' textAlign="center" style={header1}>
-        Need help in passing Algorithms?
-        <Image src = 'public/images/algorithm.png'/>
+        Need help in passing
+        <br/>
       </Container>
     );
   }
