@@ -49,3 +49,7 @@ p {
     color: #ffffff;
     background: #000000;
 }
+
+.center{
+    text-align: center;
+}
