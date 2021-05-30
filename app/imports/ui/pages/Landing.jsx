@@ -1,13 +1,16 @@
 import React from 'react';
-import { Header, Grid, Icon, Button } from 'semantic-ui-react';
+import { Header, Grid, Icon, Button, Image } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import LandingNavBar from '../components/nvabars/LandingNavBar';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
       <div>
+        <LandingNavBar />
         <div className="landing-header-background" />
-        <div className='landing-bg-text'><p>Algo-Trix</p><br />
+        <div className='landing-bg-text'><Image src='images/algotrix.png' centered/><br />
           <h2> Your friend to pass Algorithm (Gate Way Keeper)
           </h2></div>
         <div className='red'>
@@ -40,12 +43,12 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Header as='h2' inverted textAlign='center'> NEW TO Algo-Trix</Header>
                 <p>Create an Account.</p>
-                <Icon name='user plus' size='massive' />
+                <NavLink exact to="/signup"><Icon name='user plus' size='massive' /></NavLink>
               </Grid.Column>
               <Grid.Column>
                 <Header as='h2' inverted textAlign='center'> RETURNING TO Algo-Trix</Header>
                 <p>Sign Back In.</p>
-                <Icon name='user' size='massive' />
+                <NavLink exact to="/signin"><Icon name='user' size='massive' /></NavLink>
               </Grid.Column>
             </Grid>
             <br />
