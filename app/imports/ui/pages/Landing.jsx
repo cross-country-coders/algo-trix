@@ -48,7 +48,7 @@ class Landing extends React.Component {
               <Grid.Column>
                 <Header as='h2' inverted textAlign='center'> RETURNING TO Algo-Trix</Header>
                 <p>Sign Back In.</p>
-                <NavLink exact to="/signin"><Icon name='user plus' size='massive' /></NavLink>
+                <NavLink exact to="/signin"><Icon name='user' size='massive' /></NavLink>
               </Grid.Column>
             </Grid>
             <br />
