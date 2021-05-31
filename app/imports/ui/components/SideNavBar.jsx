@@ -6,12 +6,16 @@ import { withRouter, NavLink, useLocation } from 'react-router-dom';
 import { Menu, Button, Header, Icon, IconGroup, Image, Dropdown, Sidebar } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import 'react-pro-sidebar/dist/css/styles.css';
+import SignOutConfirmation from './SignOutConfirmation';
+// import 'app/client/index.css';
 
+/*
 function CurrentPage() {
   const location = useLocation();
   console.log(location.pathname);
   return <span>Path : {location.pathname}</span>;
 }
+*/
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class SideNavBar extends React.Component {
@@ -34,6 +38,7 @@ class SideNavBar extends React.Component {
 
   render() {
     const { visible } = this.state;
+    // const font = "'Geo', sans-serif";
     /*    const menuStyle = {
       height: '100%', /!* Full-height: remove this if you want "auto" height *!/
       width: 'auto', /!* Set the width of the sidebar *!/
@@ -59,19 +64,20 @@ class SideNavBar extends React.Component {
           visible={visible}
           width='thin'
           color='grey'
+          style={{ height: '100vh', minHeight: '100vh' }}
         >
           <Button fluid style={{ zIndex: 2 }} icon color='grey' disabled={false} onClick={this.handleShowClick}>
             <Icon name='bars'/>
           </Button>
           {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
+            [<Menu.Item as={NavLink} exact to="/add" key='add'>Add Stuff</Menu.Item>,
+              <Menu.Item as={NavLink} exact to="/list" key='list'>List Stuff</Menu.Item>]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+            <Menu.Item as={NavLink} exact to="/admin" key='admin'>Admin</Menu.Item>
           ) : ''}
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="navbar-home"
-            as={NavLink} exact to="/">
+            as={NavLink} exact to="/#">
             <IconGroup>
               <Icon name='home'/>
               Home
@@ -118,14 +124,7 @@ class SideNavBar extends React.Component {
             </IconGroup>
           </Menu.Item>
 
-          <Menu.Item style={{ position: 'absolute', bottom: 0, width: '100%' }}
-            id="navbar-sign-out"
-            as={NavLink} exact to="/signout">
-            <IconGroup>
-              <Icon name='sign out'/>
-              Logout
-            </IconGroup>
-          </Menu.Item>
+          <SignOutConfirmation id="navbar-sign-out" as={NavLink} exact to="/signout" style={{ padding: 0, margin: 0 }}/>
         </Sidebar>
       </div>
 
