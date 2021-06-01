@@ -72,12 +72,12 @@ p {
 }
 
 .viewProfile {
-  background: #013160 !important;
-  border: 2px solid #004486 !important;
+  background: #e4e4e4 !important;
+  border: 2px solid #2b2b2b !important;
 }
 .viewProfile.jello-horizontal2 {
-  background: #013160 !important;
-  border: 2px solid #004486 !important;
+  background: #e4e4e4 !important;
+  border: 2px solid #2b2b2b !important;
 }
 
 /* The wobble animation on the home page circles */
@@ -175,9 +175,9 @@ p {
 }
 
 .editButtonProfile.ui.blue.button{
-  background: #03163a !important;
+  background: #1d1d1d !important;
 }
 
 .editButtonProfilePencil.ui.blue.button{
-  background: #014485 !important;
+  background: #312f2f !important;
 }

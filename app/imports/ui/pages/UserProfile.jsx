@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
                 <div className={'jello-horizontal2'}>
                   <Image src={this.props.profiles.userImage}
                     // eslint-disable-next-line
-                           style={{ borderRadius: '50%', width: '280px', height: '280px', top: '200px', left: '50px' }}
+                           style={{ borderRadius: '15px', width: '280px', height: '280px', top: '200px', left: '50px' }}
                   /></div>
                 <div className={'jello-horizontal2'}>
                 </div>
@@ -47,7 +47,7 @@ class UserProfile extends React.Component {
                     style={{
                       height: '370px',
                       width: '370px',
-                      borderRadius: '100rem',
+                      borderRadius: '15px',
                       left: '42px',
                       top: '78px',
                     }}>
@@ -61,7 +61,7 @@ class UserProfile extends React.Component {
                             Username: {this.props.profiles.owner}
                         </p>
                         <p>
-                            Password:
+                            Password: {this.props.profiles.password}
                         </p>
                         <Button
                           as={NavLink}
@@ -87,12 +87,12 @@ class UserProfile extends React.Component {
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width={16}>
-                <div className={'growForProfile'} style={{ borderRadius: '100rem', height: '450px', width: '450px' }}>
+                <div className={'growForProfile'} style={{ borderRadius: '100rem', height: '250px', width: '250px' }}>
                   <Segment className={'viewProfile jello-horizontal2 growForProfile'}
                     style={{
                       height: '600px',
                       width: '600px',
-                      borderRadius: '100rem',
+                      borderRadius: '15px',
                       left: '82px',
                       top: '5em',
                     }}>
