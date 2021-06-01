@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Loader, Container, Image, Button, Header, Segment, Grid, Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { UserInfos } from '../../api/userinfo/UserInfo';
+import SideNavBar from '../components/SideNavBar';
 
 class UserProfile extends React.Component {
   render() {
@@ -21,11 +22,11 @@ class UserProfile extends React.Component {
 
     return (
       <div style={{
-        background: '#001947',
+        background: '#FF6961',
         backgroundSize: 'cover',
 
       }}>
-
+        <SideNavBar/>
         <Container style={pageStyle}>
           <Grid className={'profileGrid'}>
 
@@ -35,7 +36,7 @@ class UserProfile extends React.Component {
                 <div className={'jello-horizontal2'}>
                   <Image src={this.props.profiles.userImage}
                     // eslint-disable-next-line
-                           style={{ borderRadius: '15px', width: '280px', height: '280px', top: '200px', left: '50px' }}
+                           style={{ borderRadius: '15px', width: '280px', height: '280px', top: '75px', left: '20px' }}
                   /></div>
                 <div className={'jello-horizontal2'}>
                 </div>
@@ -45,18 +46,19 @@ class UserProfile extends React.Component {
                 <div className={'growForProfile'} style={{ borderRadius: '100rem' }}>
                   <Segment className={'viewProfile jello-horizontal2'}
                     style={{
-                      height: '370px',
-                      width: '370px',
+                      height: '350px',
+                      width: '350px',
                       borderRadius: '15px',
-                      left: '42px',
-                      top: '78px',
+                      left: '5px',
+                      top: '190px',
                     }}>
                     <div className={'infoCard'}>
-                      <Header as='h1' inverted style={{ fontWeight: 'lighter' }}>
+                      <Header as='h1' style={{ fontWeight: 'lighter' }}>
+                        <h1>Hello!</h1>
                         {this.props.profiles.firstName} {this.props.profiles.lastName}
                       </Header>
 
-                      <Header as='h3' inverted style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
+                      <Header as='h3' style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
                         <p>
                             Username: {this.props.profiles.owner}
                         </p>
@@ -90,13 +92,32 @@ class UserProfile extends React.Component {
                 <div className={'growForProfile'} style={{ borderRadius: '100rem', height: '250px', width: '250px' }}>
                   <Segment className={'viewProfile jello-horizontal2 growForProfile'}
                     style={{
-                      height: '600px',
-                      width: '600px',
+                      height: '400px',
+                      width: '400px',
                       borderRadius: '15px',
-                      left: '82px',
-                      top: '5em',
+                      left: '-105px',
+                      top: '25px',
                     }}>
+                    <div className={'infoCard'}>
+                      <Header as='h1' style={{ fontWeight: 'lighter' }}>
+                        <h1>My Progress</h1>
+                      </Header>
 
+                      <Header as='h3' style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
+                        <h3>
+                            Progression:
+                        </h3>
+                        <p>
+                           Topics:
+                        </p>
+                        <p>
+                          Videos watched:
+                        </p>
+                        <p>
+                          Problems completed:
+                        </p>
+                      </Header>
+                    </div>
                   </Segment>
                 </div>
               </Grid.Column>
@@ -111,14 +132,21 @@ class UserProfile extends React.Component {
   }
 }
 
-UserProfile.propTypes = {
-  ready: PropTypes.bool.isRequired,
-  profiles: PropTypes.object,
-  currentUser: PropTypes.string,
-  currentId: PropTypes.string,
-};
-
-export default withTracker(({ match }) => {
+UserProfile.propTypes =
+    {
+      ready: PropTypes.bool.isRequired,
+      profiles:
+PropTypes.object,
+      currentUser:
+PropTypes.string,
+      currentId:
+PropTypes.string,
+    };
+export default withTracker((
+  {
+    match,
+  },
+) => {
   const userID = Meteor.userId();
   const sub1 = UserInfos.subscribeUserInfo();
   const userAccount = Meteor.users.findOne({ _id: userID });
