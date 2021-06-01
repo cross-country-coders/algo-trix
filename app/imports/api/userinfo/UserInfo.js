@@ -18,7 +18,10 @@ class UserInfoCollection extends BaseCollection {
       lastName: String,
       owner: String,
       password: String,
-      userImage: String,
+      userImage: {
+        type: String,
+        optional: true,
+      },
       email: String,
     }));
   }
