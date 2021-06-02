@@ -13,7 +13,7 @@ class UserProfile extends React.Component {
   renderPage() {
     return (
       <Segment>
-        <Header as='h2' textAlign='centered'> Profile Page </Header>
+        <Header as='h2' textAlign='center'> Profile Page </Header>
         <Card centered>
           <Image src={this.props.profiles.userImage} />
           <Card.Content>

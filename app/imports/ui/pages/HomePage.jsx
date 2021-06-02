@@ -10,12 +10,12 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <Header as = 'h1' textAlign='centered'>WELCOME </Header>
-        <Container text textAlign="centered">
+        <Header as = 'h1' textAlign='center'>WELCOME </Header>
+        <Container text textAlign='center'>
           <p>We all know algorithm is a difficult subject. Let AlgoTrix help you out.</p>
         </Container>
-        <Header as = 'h1' textAlign='centered'>PreReq Materials</Header>
-        <Container textAlign="centered">
+        <Header as = 'h1' textAlign='center'>PreReq Materials</Header>
+        <Container textAlign="center">
           <p> Some of the prereq materials you should review before taking Algorithms course.</p>
           <Card.Group centered itemsPerRow = {4}>
             <Card>
