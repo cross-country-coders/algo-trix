@@ -63,7 +63,6 @@ class EditProfile extends React.Component {
       paddingLeft: '15em',
       paddingTop: '6em',
       minHeight: '110vh',
-      backgroundSize: 'cover',
     };
     let dataImage = this.state.userImage;
     if (this.state.userImage === 'no-change') {
@@ -71,8 +70,8 @@ class EditProfile extends React.Component {
     }
     return (
       <div style={{
-        height: '100%',
-        marginTop: '-10px',
+        background: '#FF6961',
+        backgroundSize: 'cover',
       }}>
         <SideNavBar/>
         <Container style={pageStyle}>
