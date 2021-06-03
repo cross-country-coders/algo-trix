@@ -36,7 +36,6 @@ class HomePage extends React.Component {
                 </Card.Content>
               </Card.Content>
             </Card>
-
           </Card.Group>
         </Container>
       </div>
