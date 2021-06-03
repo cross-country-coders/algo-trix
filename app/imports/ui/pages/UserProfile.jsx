@@ -60,7 +60,7 @@ class UserProfile extends React.Component {
 
                       <Header as='h3' style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
                         <p>
-                            Username: {this.props.profiles.owner}
+                            Username: {this.props.profiles._id}
                         </p>
                         <p>
                             Password: {this.props.profiles.password}
