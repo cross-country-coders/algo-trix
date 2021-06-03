@@ -69,13 +69,6 @@ class SideNavBar extends React.Component {
           <Button fluid style={{ zIndex: 2 }} icon color='grey' disabled={false} onClick={this.handleShowClick}>
             <Icon name='bars'/>
           </Button>
-          {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} exact to="/add" key='add'>Add Stuff</Menu.Item>,
-              <Menu.Item as={NavLink} exact to="/list" key='list'>List Stuff</Menu.Item>]
-          ) : ''}
-          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} exact to="/admin" key='admin'>Admin</Menu.Item>
-          ) : ''}
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="navbar-home"
             as={NavLink} exact to="/#">
             <IconGroup>
