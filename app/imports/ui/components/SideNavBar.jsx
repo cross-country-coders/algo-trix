@@ -51,7 +51,7 @@ class SideNavBar extends React.Component {
     }; */
     return (
       <div>
-        <Button style={{ position: 'fixed', zIndex: 1, top: 0 }} attached={'right'} icon color='grey' disabled={false} onClick={this.handleShowClick}>
+        <Button style={{ position: 'fixed', zIndex: 1, top: 0, height: '100vh', borderRadius: 0 }} attached={'right'} icon color='grey' disabled={false} onClick={this.handleShowClick}>
           <Icon name='bars'/>
         </Button>
         <Sidebar
