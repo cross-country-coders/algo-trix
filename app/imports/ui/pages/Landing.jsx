@@ -2,14 +2,12 @@ import React from 'react';
 import { Header, Grid, Icon, Button, Image } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import LandingNavBar from '../components/nvabars/LandingNavBar';
-import SideNavBar from '../components/SideNavBar';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
       <div>
-        <SideNavBar/>
         <LandingNavBar />
         <div className="landing-header-background" />
         <div className='landing-bg-text'><Image src='images/algotrix.png' centered/><br />

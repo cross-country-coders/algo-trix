@@ -5,6 +5,7 @@ import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import UserProfile from '../pages/UserProfile';
+import Contact from '../pages/Contact';
 import Landing from '../pages/Landing';
 import HomePage from '../pages/HomePage';
 import ListStuff from '../pages/ListStuff';
@@ -28,6 +29,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/home" component={HomePage}/>
+            <ProtectedRoute path="/contact" component={Contact}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/profile" component={UserProfile}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
