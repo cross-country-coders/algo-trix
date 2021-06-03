@@ -70,7 +70,7 @@ class SideNavBar extends React.Component {
             <Icon name='bars'/>
           </Button>
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="navbar-home"
-            as={NavLink} exact to="/#">
+            as={NavLink} exact to="/home">
             <IconGroup>
               <Icon name='home'/>
               Home
