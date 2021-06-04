@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Button, Icon, IconGroup, Sidebar } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
-//import 'react-pro-sidebar/dist/css/styles.css';
+// import 'react-pro-sidebar/dist/css/styles.css';
 import SignOutConfirmation from './SignOutConfirmation';
 // import 'app/client/index.css';
 
@@ -69,9 +69,6 @@ class SideNavBar extends React.Component {
           <Button fluid style={{ zIndex: 2 }} icon color='grey' disabled={false} onClick={this.handleShowClick}>
             <Icon name='bars'/>
           </Button>
-          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item as={NavLink} exact to="/admin" key='admin'>Admin</Menu.Item>
-          ) : ''}
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="navbar-home"
             as={NavLink} exact to="/#">
             <IconGroup>
@@ -79,7 +76,6 @@ class SideNavBar extends React.Component {
               Home
             </IconGroup>
           </Menu.Item>
-
           <Menu.Item style={{ width: '100%' }} id="navbar-Prereq"
             as={NavLink} exact to="">
             <IconGroup>
@@ -95,22 +91,25 @@ class SideNavBar extends React.Component {
               Contact Admin
             </IconGroup>
           </Menu.Item>
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ width: '100%' }} id="navbar-Admin"
+              as={NavLink} exact to="">
+              <IconGroup>
+                <Icon name='cog'/>
+                  Admin
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
-          <Menu.Item style={{ width: '100%' }} id="navbar-Admin"
-            as={NavLink} exact to="">
-            <IconGroup>
-              <Icon name='cog'/>
-              Admin
-            </IconGroup>
-          </Menu.Item>
-
-          <Menu.Item style={{ width: '100%' }} id="navbar-UserList"
-            as={NavLink} exact to="">
-            <IconGroup>
-              <Icon name='list'/>
-              User List
-            </IconGroup>
-          </Menu.Item>
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+            <Menu.Item style={{ width: '100%' }} id="navbar-UserList"
+              as={NavLink} exact to="">
+              <IconGroup>
+                <Icon name='list'/>
+                  User List
+              </IconGroup>
+            </Menu.Item>
+          ) : ''}
 
           <Menu.Item style={{ width: '100%' }} id="navbar-UserCount"
             as={NavLink} exact to="">
