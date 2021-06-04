@@ -74,7 +74,7 @@ class BaseCollection {
       throw new Meteor.Error(`${name} is not a defined ${this.type}`);
     }
     const doc = (
-        this._collection.findOne(name)
+      this._collection.findOne(name)
         || this._collection.findOne({ name })
         || this._collection.findOne({ _id: name }));
     if (!doc) {
@@ -141,7 +141,7 @@ class BaseCollection {
       return false;
     }
     return (
-        !!this._collection.findOne(name)
+      !!this._collection.findOne(name)
         || !!this._collection.findOne({ name })
         || !!this._collection.findOne({ _id: name }));
   }
