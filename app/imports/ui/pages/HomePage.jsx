@@ -4,12 +4,14 @@ import { Header, Container, Card, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { UserInfos } from '../../api/userinfo/UserInfo';
+import SideNavBar from '../components/SideNavBar';
 
 /** A simple static component to render some text for the landing page. */
 class HomePage extends React.Component {
   render() {
     return (
       <div>
+        <SideNavBar/>
         <Header as = 'h1' textAlign='center'>WELCOME </Header>
         <Container text textAlign='center'>
           <p>We all know algorithm is a difficult subject. Let AlgoTrix help you out.</p>
