@@ -22,7 +22,7 @@ class UserProfile extends React.Component {
 
     return (
       <div style={{
-        background: '#FF6961',
+        background: '#FF5148',
         backgroundSize: 'cover',
 
       }}>
@@ -58,7 +58,7 @@ class UserProfile extends React.Component {
                         {this.props.profiles.firstName} {this.props.profiles.lastName}
                       </Header>
 
-                      <Header as='h3' style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
+                      <h2 style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
                         <p>
                             Username: {this.props.profiles._id}
                         </p>
@@ -81,7 +81,7 @@ class UserProfile extends React.Component {
                           </Button.Content>
                         </Button>
 
-                      </Header>
+                      </h2>
                     </div>
                   </Segment>
                 </div>
