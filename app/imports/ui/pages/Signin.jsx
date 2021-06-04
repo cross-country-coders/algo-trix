@@ -42,7 +42,7 @@ export default class Signin extends React.Component {
     // Render the signin form.
     render() {
       let fRef = null;
-      const { from } = this.props.location.state || { from: { pathname: '/' } };
+      const { from } = this.props.location.state || { from: { pathname: '/home' } };
       // if correct authentication, redirect to page instead of login screen
       if (this.state.redirectToReferer) {
         return <Redirect to={from}/>;
@@ -52,12 +52,10 @@ export default class Signin extends React.Component {
         <Container id="signin-page" style={{ marginTop: '5em', paddingBottom: '5em' }}>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-
               <Segment.Group piled>
                 <Segment>
                   <Button as={NavLink} fluid color='orange' exact to='/signup'>No Account? Register Today</Button>
                 </Segment>
-
                 <Segment>
                   <AutoForm ref={ref => {
                     fRef = ref;
