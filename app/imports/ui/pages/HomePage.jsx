@@ -1,10 +1,7 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Header, Container, Card, Button } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
-import { UserInfos } from '../../api/userinfo/UserInfo';
+import { Header, Container, Card, Button } from 'semantic-ui-react';;
 import SideNavBar from '../components/SideNavBar';
+import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
 class HomePage extends React.Component {
@@ -12,10 +9,11 @@ class HomePage extends React.Component {
     return (
       <div>
         <SideNavBar/>
-        <Header as = 'h1' textAlign='center'>WELCOME </Header>
-        <Container text textAlign='center'>
-          <p>We all know algorithm is a difficult subject. Let AlgoTrix help you out.</p>
-        </Container>
+        <div className='red'>
+          <Header as = 'h1' textAlign='center' inverted>WELCOME </Header>
+          <Container text textAlign='center'>
+            <p>We all know algorithm is a difficult subject. Let AlgoTrix help you out.</p>
+          </Container></div>
         <Header as = 'h1' textAlign='center'>PreReq Materials</Header>
         <Container textAlign="center">
           <p> Some of the prereq materials you should review before taking Algorithms course.</p>
@@ -38,28 +36,46 @@ class HomePage extends React.Component {
                 </Card.Content>
               </Card.Content>
             </Card>
+            <Card>
+              <Card.Content>
+                <Card.Header>Run Time</Card.Header>
+                <Card.Description>Review on the different runtimes..</Card.Description>
+                <Card.Content extra>
+                  <Button>CLICK</Button>
+                </Card.Content>
+              </Card.Content>
+            </Card>
+            <Card>
+              <Card.Content>
+                <Card.Header>Basic ADTS</Card.Header>
+                <Card.Description>Review on the Stacks, Queues, and Lists</Card.Description>
+                <Card.Content extra>
+                  <Button>CLICK</Button>
+                </Card.Content>
+              </Card.Content>
+            </Card>
           </Card.Group>
         </Container>
+        <br/>
+        <div className="red">
+          <Container>
+            <Header as = "h2" textAlign='center' inverted>Graph and Path</Header>
+            <Container text textAlign='center'>
+              <p>This covers topics such as MST, little Graph Theory, etc. </p>
+            </Container>
+          </Container>
+          <br/>
+        </div>
+        <div>
+          <Header as = "h2" textAlign="center"> Trees</Header>
+          <Container text textAlign='center'>
+            <p> The more different types of trees that you will learn in ALgorithms course.</p>
+          </Container>
+        </div>
+        <Footer/>
       </div>
     );
   }
 }
 
-HomePage.propTypes = {
-  ready: PropTypes.bool.isRequired,
-  profiles: PropTypes.object,
-  currentUser: PropTypes.string,
-  currentId: PropTypes.string,
-};
-export default withTracker(({ match }) => {
-  const userID = Meteor.userId();
-  const sub1 = UserInfos.subscribeUserInfo();
-  const userAccount = Meteor.users.findOne({ _id: userID });
-  const profiles = UserInfos.findOne({ owner: userAccount?.username });
-  return {
-    profiles,
-    currentUser: Meteor.user() ? Meteor.user().username : '',
-    currentId: match.params._id,
-    ready: sub1.ready(),
-  };
-})(HomePage);
+export default (HomePage);
