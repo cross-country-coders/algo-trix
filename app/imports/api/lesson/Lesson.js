@@ -9,6 +9,11 @@ class LessonCollection {
     this.schema = new SimpleSchema({
       lessonName: String,
       description: String,
+      section: {
+        type: String,
+        allowedValues: ['prereq', 'sorting', 'graph'],
+      },
+      image: String,
     }, { tracker: Tracker });
     this.collection.attachSchema(this.schema);
     this.lessonPublicationName = `${this.name}.publication.lesson`;
