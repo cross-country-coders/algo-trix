@@ -125,7 +125,7 @@ class SignInAndUp extends React.Component {
           onOpen={() => this.setState({ open: true })}
           open={this.state.open}
           dimmer={'blurring'}
-          trigger={<Button id="login-dropdown" text="Login" pointing="top right" icon={'user'} />}>
+          trigger={<Button id="login-dropdown" pointing="top right">Login / Register</Button>}>
           <Modal.Header>
             <Button fluid color='orange' onClick={() => this.toggle(pageState)}>
               {(pageState === 'signin') ? 'No Account? Register Today' : 'Got an Account? Login Now'}
