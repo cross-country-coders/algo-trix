@@ -17,8 +17,13 @@ class UserInfoCollection extends BaseCollection {
       firstName: String,
       lastName: String,
       _id: String,
+      email: String,
       password: String,
-      userImage: String,
+      userImage: {
+        type: String,
+        optional: true,
+        defaultValue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png',
+      },
     }));
   }
 
@@ -32,11 +37,12 @@ class UserInfoCollection extends BaseCollection {
    * @param zipcode the zipcode of the person.
    * @return {String} the docID of the new document.
    */
-  define({ firstName, lastName, owner, password, userImage }) {
+  define({ firstName, lastName, email, password, userImage }) {
     const docID = this._collection.insert({
       firstName: firstName,
       lastName: lastName,
-      _id: owner,
+      email: email,
+      _id: email,
       password: password,
       userImage: userImage,
     });
