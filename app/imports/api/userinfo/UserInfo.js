@@ -19,7 +19,11 @@ class UserInfoCollection extends BaseCollection {
       _id: String,
       email: String,
       password: String,
-      userImage: String,
+      userImage: {
+        type: String,
+        optional: true,
+        defaultValue: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png',
+      },
     }));
   }
 

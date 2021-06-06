@@ -11,7 +11,7 @@
       "lastName": "Temp",
       "password": "changeme",
       "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
-      "owner": "john@foo.com"
+      "email": "john@foo.com"
     },
     {
       "firstName": "Admin",
@@ -19,7 +19,7 @@
       "password": "changeme",
       "userImage": "https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg",
       "role": "admin",
-      "owner": "admin@foo.com"
+      "email": "admin@foo.com"
     }
   ],
   "defaultLesson": [
