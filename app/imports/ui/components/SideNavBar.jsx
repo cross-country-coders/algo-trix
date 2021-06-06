@@ -110,7 +110,7 @@ class SideNavBar extends React.Component {
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ width: '100%' }} id="navbar-UserList"
-              as={NavLink} exact to="">
+              as={NavLink} exact to="/listusers">
               <IconGroup>
                 <Icon name='list'/>
                   User List
