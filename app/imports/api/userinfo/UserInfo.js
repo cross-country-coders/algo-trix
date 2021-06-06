@@ -17,7 +17,7 @@ class UserInfoCollection extends BaseCollection {
       firstName: String,
       lastName: String,
       _id: String,
-      owner: String,
+      email: String,
       password: String,
       userImage: {
         type: String,
