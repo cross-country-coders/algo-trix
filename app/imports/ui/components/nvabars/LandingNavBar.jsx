@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header, Sticky } from 'semantic-ui-react';
+import SignInAndUp from '../SignInAndUp';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class LandingNavBar extends React.Component {
@@ -15,12 +16,7 @@ class LandingNavBar extends React.Component {
             <Header inverted as='h1'>Algo-Trix</Header>
           </Menu.Item>
           <Menu.Item position="right">
-            <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
-              <Dropdown.Menu>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin" />
-                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup" />
-              </Dropdown.Menu>
-            </Dropdown>
+            <SignInAndUp mode={'signin'}/>
           </Menu.Item>
         </Menu>
       </Sticky>

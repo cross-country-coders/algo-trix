@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import { Header, Button } from 'semantic-ui-react';
 
 /** After the user clicks the "Signout" link in the NavBar, log them out and display this page. */
 export default class Signout extends React.Component {
@@ -8,7 +9,9 @@ export default class Signout extends React.Component {
     Meteor.logout();
     return (
       <Header id="signout-page" as="h2" textAlign="center">
-        <p>You are signed out.</p>
+        <p style={{ fontSize: '2.4em' }}>You are signed out.</p>
+        <br/><br/>
+        <Button as={NavLink} exact to='/' color='red' size='large'>Back to Landing Page</Button>
       </Header>
     );
   }
