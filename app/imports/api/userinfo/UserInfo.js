@@ -17,7 +17,7 @@ class UserInfoCollection extends BaseCollection {
       firstName: String,
       lastName: String,
       _id: String,
-      email: String,
+      owner: String,
       password: String,
       userImage: {
         type: String,
@@ -37,12 +37,12 @@ class UserInfoCollection extends BaseCollection {
    * @param zipcode the zipcode of the person.
    * @return {String} the docID of the new document.
    */
-  define({ firstName, lastName, email, password, userImage }) {
+  define({ firstName, lastName, owner, password, userImage }) {
     const docID = this._collection.insert({
       firstName: firstName,
       lastName: lastName,
-      email: email,
-      _id: email,
+      email: owner,
+      _id: owner,
       password: password,
       userImage: userImage,
     });
