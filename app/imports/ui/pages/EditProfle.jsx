@@ -73,13 +73,13 @@ class EditProfile extends React.Component {
         background: '#FF6961',
         backgroundSize: 'cover',
       }}>
-        <SideNavBar/>
+        <SideNavBar />
         <Container style={pageStyle}>
-          <Header inverted as = "h2" style = {{ fontFamily: 'sans-serif', fontWeight: 'lighter' }} textAlign="center">Edit Profile</Header>
+          <Header inverted as="h2" style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }} textAlign="center">Edit Profile</Header>
           <Grid>
             <Grid.Row style={{ marginTop: '3em' }}>
               <Grid.Column width={5}>
-                <Image size = 'massive' style= {{ borderRadius: '5%' }} src={dataImage} centered/>
+                <Image size='massive' style={{ borderRadius: '5%' }} src={dataImage} centered />
                 <div style={{ color: 'black' }}>
                   <label style={{ cursor: 'pointer', color: 'aliceblue' }} htmlFor="file-input">
                       Choose Your Photo here
@@ -90,7 +90,7 @@ class EditProfile extends React.Component {
                   name="picture"
                   accept=".jpg, .jpeg, .png"
                   style={{ display: 'none' }}
-                  onChange={this.submitImage}/>
+                  onChange={this.submitImage} />
               </Grid.Column>
               <Grid.Column stretched width={11}>
                 <AutoForm
@@ -100,12 +100,12 @@ class EditProfile extends React.Component {
                     if (window.confirm('Are you sure you wish to save your changes?')) this.submit(data);
                   }} model={this.props.doc}>
                   <Segment>
-                    <TextField name={'firstName'}/>
-                    <TextField name={'lastName'}/>
-                    <TextField name={'password'}/>
-                    <SubmitField style={{ background: 'green', color: 'black' }} value='Update' id='update-form-submit'/>
-                    <ErrorsField/>
-                    <HiddenField name='id'/>
+                    <TextField name={'firstName'} />
+                    <TextField name={'lastName'} />
+                    <TextField name={'password'} />
+                    <SubmitField style={{ background: 'green', color: 'black' }} value='Update' id='update-form-submit' />
+                    <ErrorsField />
+                    <HiddenField name='id' />
                   </Segment>
                 </AutoForm>
               </Grid.Column>
@@ -116,6 +116,7 @@ class EditProfile extends React.Component {
     );
   }
 }
+
 EditProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
