@@ -5,7 +5,7 @@ export default function generateUsers(num) {
   const testUsers = [];
   for (let i = 0; i < num; i++) {
     const fakeFirst = _.sample(['Janice', 'Elizabeth', 'Alex', 'Zach', 'Mac']);
-    const fakeLast = 'foo';
+    const fakeLast = _.sample(['Janice', 'Elizabeth', 'Alex', 'Zach', 'Mac']);;
     const fakePassword = 'ics427';
     const fakeEmail = `${fakeFirst}${fakeLast}${i}@gmail.com`;
     const profileImage = _.sample(['https://i0.wp.com/butwhythopodcast.com/wp-content/uploads/2021/04/Tropical-Rouge-PreCure-Episode-5-But-Why-Tho.jpg?fit=1500%2C844&ssl=1',

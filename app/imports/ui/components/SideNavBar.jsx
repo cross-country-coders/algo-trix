@@ -92,7 +92,7 @@ class SideNavBar extends React.Component {
           </Menu.Item>
 
           <Menu.Item style={{ width: '100%' }} id="navbar-Contact"
-            as={NavLink} exact to="">
+            as={NavLink} exact to="/contact">
             <IconGroup>
               <Icon name='mail'/>
               Contact Admin
