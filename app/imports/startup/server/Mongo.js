@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { _ } from 'meteor/underscore';
 import { Lesson } from '../../api/lesson/Lesson';
 import generateUsers from '../../api/usergenerator/UserGenerator';
 import { UserInfos } from '../../api/userinfo/UserInfo';
@@ -19,16 +18,16 @@ function createUser(user, password, role) {
 }
 
 function addUser(data) {
-  console.log((`  Adding: ${data.firstName} ${data.lastName} (${data.owner} | ${data.userImage}) `));
+  console.log((`\tAdding: ${data.firstName} ${data.lastName} (${data.owner} | ${data.userImage}) `));
   UserInfos.define(data);
   createUser(data.owner, data.password, data.role);
 }
 
-function addFakeProfile({ firstName, lastName, userImage, password }) {
-  console.log(` Adding Fake Profiles: ${firstName} ${lastName}, ${userImage}`);
-  const owner = `${firstName}${lastName}${_.random(1, 10)}@gmail.com`;
-  createUser(owner, 'changeme', 'none');
-  UserInfos.define({ firstName, lastName, owner, password, userImage });
+function addFakeProfile({ firstName, lastName, userImage, _id, password }) {
+  console.log(`\tAdding Fake Profiles:\n\t\t${firstName} ${lastName} (${userImage})`);
+  console.log(`\t\t${_id}  |  ${password}`);
+  createUser(_id, password, 'none');
+  UserInfos.define({ firstName, lastName, owner: _id, password, userImage });
 }
 
 if (UserInfos.count() === 0) {
@@ -39,7 +38,7 @@ if (UserInfos.count() === 0) {
 }
 
 if (UserInfos.count() < 3) {
-  const sampleUsers = generateUsers(3);
+  const sampleUsers = generateUsers(6);
   sampleUsers.map(profile => addFakeProfile(profile));
 }
 
