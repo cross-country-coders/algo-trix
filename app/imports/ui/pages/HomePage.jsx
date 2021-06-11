@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Container, Card, Button } from 'semantic-ui-react';;
+import { Header, Container, Card, Button } from 'semantic-ui-react';
 import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
 
