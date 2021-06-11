@@ -1,7 +1,8 @@
 import React from 'react';
-import { Header, Container, Tab, Image } from 'semantic-ui-react';
+import { Header, Container } from 'semantic-ui-react';
 import SideNavBar from '../../../components/SideNavBar';
 import ProofNotes from '../../../components/notes/ProofNotes';
+import ProofPractice from '../../../components/practice/proof/ProofPractice';
 
 class ProofMethod extends React.Component {
   render() {
@@ -18,6 +19,8 @@ class ProofMethod extends React.Component {
           <br/>
           <Header as = 'h3' textAlign='center'>The Different Proof Techniques </Header>
           <ProofNotes/>
+          <Header as = 'h3' textAlign='center'>Example Problems</Header>
+          <ProofPractice/>
         </Container>
       </div>
     );

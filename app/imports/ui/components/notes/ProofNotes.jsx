@@ -4,7 +4,9 @@ import { Image, Tab } from 'semantic-ui-react';
 class ProofNotes extends React.Component {
   render() {
     const proofPanes = [
-      { menuItem: 'Direct Proof' },
+      { menuItem: 'Direct Proof', render: () => <Tab.Pane>
+          Assume that given statement is true and prove that the conclusion statement is true.
+      </Tab.Pane> },
       { menuItem: 'Proof by Contradiction', render: () => <Tab.Pane>
         Assume that the conclusion statement is true and show that it leads to a contradiction.<br/>
           Below is a sample problem of contradiction style proof.<br/>
