@@ -2,9 +2,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Loader, Container, Image, Button, Header, Segment, Grid } from 'semantic-ui-react';
+import { Loader, Container, Image, Header, Segment, Grid } from 'semantic-ui-react';
 import { UserInfos } from '../../api/userinfo/UserInfo';
 import SideNavBar from '../components/SideNavBar';
+import UpdateProfile from '../components/UpdateProfile';
 
 class UserProfile extends React.Component {
   render() {
@@ -23,12 +24,10 @@ class UserProfile extends React.Component {
       <div style={{
         background: '#FF5148',
         backgroundSize: 'cover',
-
       }}>
         <SideNavBar/>
         <Container style={pageStyle}>
           <Grid className='profileGrid'>
-
             <Grid.Row>
               <Grid.Column width={5}>
 
@@ -54,9 +53,6 @@ class UserProfile extends React.Component {
                       <h2 style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
                         <p>Email: {this.props.profiles._id}</p>
                         <p>Password: {'*'.repeat(this.props.profiles.password.length)}</p>
-                        <Button circular icon='settings' size='medium' color='blue' className='editButtonProfile'
-                          style={{ position: 'absolute', width: '28%', top: '18.8em', left: '11.5em' }} />
-
                       </h2>
                     </div>
                   </Segment>
@@ -89,6 +85,7 @@ class UserProfile extends React.Component {
             </Grid.Row>
 
           </Grid>
+          <UpdateProfile profile={this.props.profiles}/>
         </Container>
 
       </div>
