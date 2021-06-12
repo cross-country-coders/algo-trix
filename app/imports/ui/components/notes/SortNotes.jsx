@@ -17,29 +17,50 @@ class SortNotes extends React.Component {
           <li>Worst Case RunTime: O(n^2)</li>
         </ul>
         <Container textAlign='center'>
-          <iframe width="520" height="415"
-            src="https://www.youtube.com/watch?v=i-SKeOcBwko">
-          </iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/JU767SDMDvA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
         </Container>
       </Tab.Pane> },
       { menuItem: 'Bubble Sort', render: () => <Tab.Pane>
-          Assume that the conclusion statement is true and show that it leads to a contradiction.<br/>
-          Below is a sample problem of contradiction style proof.<br/>
-        <Image src='images/contradiction.png' centered/>
+          Simplest algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+          Compare the current element and if the next element is not in order then swap it.
+        <Container textAlign='center'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xli_FI7CuzA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </Container>
       </Tab.Pane> },
-      { menuItem: 'Selection Sort ' },
-      { menuItem: 'Merge Sort', render: () => <Tab.Pane>One proof that is popular in ICS 311
-          is <b>Proof By Induction</b>. Below is the basic template of it. <br/>
-      <ol>
-        <li>State what the P(x) is.</li>
-        <li><b>Base Step</b><br/> Show that the Base case is true.</li>
-        <li><b>Inducive Step</b> Assume that for an arbitrary k in the range 1 to n that P(k) is true. <br/>
-              Prove that P(k+1) holds true.</li>
-        <li><b>Conclusion:</b> From induction, for all x P(x) is true.
-          <br/>
-          <b>Sample on Induction</b>
-          <Image src='images/induction.png'/></li>
-      </ol></Tab.Pane> },
+      { menuItem: 'Selection Sort ', render: () => <Tab.Pane>
+         Sorts an array by repeatedly finding the minimum elemet (assuming the array is being sorted in ascending order)
+          from the unsorted array and place it in the beginning.
+        <b>The RunTime</b> O(n lg n)
+        <Container textAlign='center'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/g-PGLbMth_g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </Container>
+      </Tab.Pane> },
+      { menuItem: 'Merge Sort', render: () => <Tab.Pane>
+          A divide and conquer algorithm. Divides the input array into two halves and calls itself for the two halves.
+        <ol>
+          <li>Find the middle point to divide the array into two</li>
+          <li> Call merge sort for the first half</li>
+          <li> Call merge sort for the second half</li>
+          <li> Merge the two halves sorted in the previous steps</li>
+        </ol>
+        <b>The RunTime</b> O(n lg n)
+        <Container textAlign='center'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4VqmGXwpLqc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </Container>
+      </Tab.Pane> },
+      { menuItem: 'Radix Sort ', render: () => <Tab.Pane><ul>
+        <li>A sorting algorithm that sorts from least to most significant digits</li>
+        <li>Runtime: O(d(n+k))</li>
+      </ul>
+      <b>Sample Run Down of Radix Sort</b>
+      {/* eslint-disable-next-line max-len */}
+      <Container textAlign='center'> <iframe width="560" height="315" src="https://www.youtube.com/embed/XiuSW_mEn7g" title="YouTube video player" frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen></iframe></Container></Tab.Pane> },
     ];
     return (
       <div>

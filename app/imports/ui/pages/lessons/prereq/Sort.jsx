@@ -2,6 +2,7 @@ import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import SideNavBar from '../../../components/SideNavBar';
 import SortNotes from '../../../components/notes/SortNotes';
+import SortPractice from '../../../components/practice/proof/SortPractice';
 
 class Sort extends React.Component {
   render() {
@@ -16,6 +17,16 @@ class Sort extends React.Component {
         </div>
         <br/>
         <Container><SortNotes/>
+        </Container>
+        <br/>
+        <div className='red'>
+          <Container textAlign='center'>
+            <Header as = 'h3' textAlign='center' inverted>Sample Problems</Header>
+            <p> Here are some practice problems that you can do.</p>
+          </Container>
+        </div>
+        <Container>
+          <SortPractice/>
         </Container>
       </div>
     );

@@ -24,7 +24,7 @@ class HomePage extends React.Component {
                 <Card.Header>Sorting Algorithms</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
                 <Card.Content extra>
-                  <Button>CLICK</Button>
+                  <Button as ={NavLink} exact to ="/sort">CLICK</Button>
                 </Card.Content>
               </Card.Content>
             </Card>
