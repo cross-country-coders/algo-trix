@@ -18,6 +18,7 @@ import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import AdminListUsers from '../pages/AdminListUsers';
 import ProofMethod from '../pages/lessons/prereq/ProofMethod';
+import Sort from '../pages/lessons/prereq/Sort';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
@@ -36,6 +37,7 @@ class App extends React.Component {
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <ProtectedRoute path="/change/:_id" component={EditProfile}/>
             <ProtectedRoute path="/proof" component={ProofMethod}/>
+            <ProtectedRoute path="/sort" component={Sort}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
