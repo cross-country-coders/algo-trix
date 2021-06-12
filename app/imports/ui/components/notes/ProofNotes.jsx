@@ -10,7 +10,7 @@ class ProofNotes extends React.Component {
       { menuItem: 'Proof by Contradiction', render: () => <Tab.Pane>
         Assume that the conclusion statement is true and show that it leads to a contradiction.<br/>
           Below is a sample problem of contradiction style proof.<br/>
-        <Image src='images/contradiction.png'/>
+        <Image src='images/contradiction.png' centered/>
       </Tab.Pane> },
       { menuItem: 'Proof by Contrapositive ' },
       { menuItem: 'Induction Proof', render: () => <Tab.Pane>One proof that is popular in ICS 311
