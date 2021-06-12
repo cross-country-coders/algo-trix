@@ -1,19 +1,16 @@
 import React from 'react';
-import { Tab } from 'semantic-ui-react';
+import { Image, Tab } from 'semantic-ui-react';
 
 class ProofPractice extends React.Component {
   render() {
-    const proofProblem = [
-      { menuItem: 'Sample Problem 1' },
-      { menuItem: 'Sample Problem 2' },
-      { menuItem: 'Sample Problem 3' },
+    const samplePane = [
+      { menuItem: 'Sample 1', render: () => <Tab.Pane><b>Prove the following formula</b><br/>
+        <Image src='images/sample1.png'/></Tab.Pane> },
+      { menuItem: 'Sample 2' },
+      { menuItem: 'Sample 3' },
     ];
     return (
-      <div>
-        <Tab panes = {proofProblem}/>
-      </div>
+      <Tab panes={samplePane}/>
     );
   }
-}
-
-export default ProofPractice;
+} export default ProofPractice;
