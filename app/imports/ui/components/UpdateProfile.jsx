@@ -56,8 +56,8 @@ class UpdateProfile extends React.Component {
         onOpen={() => this.setState({ open: true })}
         open={this.state.open}
         dimmer={'blurring'}
-        trigger={<Button circular icon='settings' size='medium' color='blue' className='editButtonProfile'
-          style={{ position: 'absolute', width: '28%', top: '18.8em', left: '11.5em' }} />}>
+        trigger={<Button circular icon='settings' size='medium' className='editButtonProfile jello-horizontal2' color='blue'
+          style={{ position: 'absolute', width: '15%', top: '475px', left: '825px' }} />}>
         <Modal.Header>Update Profile Information</Modal.Header>
         <Modal.Content image>
           <Image size='medium' src={this.props.profile.userImage} />
