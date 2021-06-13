@@ -2,12 +2,77 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Loader, Container, Image, Header, Segment, Grid } from 'semantic-ui-react';
+import { Loader, Container, Image, Header, Segment, Grid, Form, Button, Modal, Message } from 'semantic-ui-react';
+import { SimpleSchema2Bridge } from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema from 'simpl-schema';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import { UserInfos } from '../../api/userinfo/UserInfo';
 import SideNavBar from '../components/SideNavBar';
-import UpdateProfile from '../components/UpdateProfile';
+
+const updateBridge = new SimpleSchema2Bridge(new SimpleSchema({
+  email: String,
+  password: String,
+  firstName: String,
+  lastName: String,
+  userImage: { type: String, optional: true,
+    defaultValue: 'https://pbs.twimg.com/profile_images/1366835403840389121/j3p8UTbo_400x400.jpg' },
+}));
 
 class UserProfile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: '', redirectToReferer: false, open: false, dimmer: undefined };
+  }
+
+  updateSubmit(data) {
+    const { password, firstName, lastName, userImage, email } = data;
+    if (this.props.profiles.password !== password) {
+      // TODO: password change with the meteor call. Remove disabled from the password field once implemented
+    }
+    UserInfos.update(email, { firstName, lastName, password, userImage });
+    this.setState({ open: false });
+  }
+
+  updateForm() {
+    return (
+      <>
+        <AutoForm schema={updateBridge} model={this.props.profiles} onSubmit={data => this.updateSubmit(data)}
+          onChangeModel={model => this.setState({ preview: model.userImage })}>
+          <Form.Group widths='equal'>
+            <TextField name='firstName' placeholder='Your first name' grid='equal'/>
+            <TextField name='lastName' placeholder='Your last name' grid='equal'/>
+          </Form.Group>
+          <TextField name='userImage' placeholder='Your profile picture link' iconLeft='file image'/>
+          <TextField name='email' placeholder='E-mail address' iconLeft='user' disabled/>
+          <TextField name='password' type='password' placeholder='Password' iconLeft='lock' disabled/>
+          <SubmitField style={{ color: 'white', backgroundColor: '#e74c3c' }} value='Save'/>
+          <ErrorsField/>
+        </AutoForm>
+      </>
+    );
+  }
+
+  modalPopup() {
+    return (
+      <Modal
+        onClose={() => this.setState({ open: false })}
+        onOpen={() => this.setState({ open: true })}
+        open={this.state.open}
+        dimmer={'blurring'}>
+        <Modal.Header>Update Profile Information</Modal.Header>
+        <Modal.Content image>
+          <Image size='medium' src={this.props.profiles.userImage} />
+          <Modal.Description>{this.updateForm()}</Modal.Description>
+        </Modal.Content>
+        <Modal.Actions>
+          {this.state.error === '' ? ('') : (
+            <Message error header="Update profile failed" content={this.state.error} />
+          )}
+        </Modal.Actions>
+      </Modal>
+    );
+  }
+
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting profile data</Loader>;
   }
@@ -26,6 +91,7 @@ class UserProfile extends React.Component {
         backgroundSize: 'cover',
       }}>
         <SideNavBar/>
+        {this.modalPopup()}
         <Container style={pageStyle}>
           <Grid className='profileGrid'>
             <Grid.Row>
@@ -53,6 +119,9 @@ class UserProfile extends React.Component {
                       <h2 style={{ fontFamily: 'sans-serif', fontWeight: 'lighter' }}>
                         <p>Email: {this.props.profiles._id}</p>
                         <p>Password: {'*'.repeat(this.props.profiles.password.length)}</p>
+                        <Button circular icon='settings' size='medium' className='editButtonProfile jello-horizontal2' color='blue'
+                          style={{ position: 'absolute', width: '15%', top: '4%', left: '80%' }}
+                          onClick={() => this.setState({ open: true })}/>
                       </h2>
                     </div>
                   </Segment>
@@ -85,7 +154,6 @@ class UserProfile extends React.Component {
             </Grid.Row>
 
           </Grid>
-          <UpdateProfile profile={this.props.profiles}/>
         </Container>
 
       </div>
