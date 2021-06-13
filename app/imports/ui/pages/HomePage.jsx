@@ -19,40 +19,28 @@ class HomePage extends React.Component {
         <Container textAlign="center">
           <p> Some of the prereq materials you should review before taking Algorithms course.</p>
           <Card.Group centered itemsPerRow = {4}>
-            <Card>
+            <Card link as ={NavLink} exact to ="/sort">
               <Card.Content>
                 <Card.Header>Sorting Algorithms</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
-                <Card.Content extra>
-                  <Button as ={NavLink} exact to ="/sort">CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
-            <Card>
+            <Card link as = {NavLink} exact to = "/proof">
               <Card.Content>
                 <Card.Header>Proof Methods</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
-                <Card.Content extra>
-                  <Button as = {NavLink} exact to = "/proof">CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
             <Card>
-              <Card.Content>
+              <Card.Content link>
                 <Card.Header>Run Time</Card.Header>
                 <Card.Description>Review on the different runtimes..</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
             <Card>
-              <Card.Content>
-                <Card.Header>Basic ADTS</Card.Header>
+              <Card.Content link>
+                <Card.Header>Basic ADTs</Card.Header>
                 <Card.Description>Review on the Stacks, Queues, and Lists</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
           </Card.Group>
