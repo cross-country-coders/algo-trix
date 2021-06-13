@@ -6,7 +6,7 @@ class ProofPractice extends React.Component {
     const samplePane = [
       { menuItem: 'Sample 1', render: () => <Tab.Pane textAlign ='center'><b>Prove the following formula</b>
         <Image src='images/sample1.png' centered/><Modal
-          trigger={<Button>Show Modal</Button>}
+          trigger={<Button>Show Answer</Button>}
           header='Solution to Sample 1'
           content=<Image src = 'images/proof/induction.png'/>
           actions={[{ key: 'done', content: 'Done', positive: true }]}
