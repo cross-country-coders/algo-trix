@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Container, Card, Button } from 'semantic-ui-react';;
+import { NavLink } from 'react-router-dom';
+import { Header, Container, Card, Button } from 'semantic-ui-react';
 import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
 
@@ -23,7 +24,7 @@ class HomePage extends React.Component {
                 <Card.Header>Sorting Algorithms</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
                 <Card.Content extra>
-                  <Button>CLICK</Button>
+                  <Button as ={NavLink} exact to ="/sort">CLICK</Button>
                 </Card.Content>
               </Card.Content>
             </Card>
@@ -32,7 +33,7 @@ class HomePage extends React.Component {
                 <Card.Header>Proof Methods</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
                 <Card.Content extra>
-                  <Button>CLICK</Button>
+                  <Button as = {NavLink} exact to = "/proof">CLICK</Button>
                 </Card.Content>
               </Card.Content>
             </Card>
