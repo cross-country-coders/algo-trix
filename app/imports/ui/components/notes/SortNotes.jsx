@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Image, Tab } from 'semantic-ui-react';
+import { Container, Tab } from 'semantic-ui-react';
 
 class SortNotes extends React.Component {
   render() {
