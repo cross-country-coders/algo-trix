@@ -2,6 +2,7 @@ import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import SideNavBar from '../../../components/SideNavBar';
 import GraphNotes from '../../../components/notes/GraphNotes';
+import GraphPractice from '../../../components/practice/graph/GraphPractie';
 
 class Graph extends React.Component {
   render() {
@@ -19,6 +20,8 @@ class Graph extends React.Component {
           <Header as = 'h3' textAlign='center'>Graph and the Necessities </Header>
           <GraphNotes/>
           <Header as = 'h3' textAlign='center'>Example Problems</Header>
+          <GraphPractice/>
+          <br/>
         </Container>
       </div>
     );
