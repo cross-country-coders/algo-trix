@@ -90,7 +90,6 @@ class UserProfile extends React.Component {
         background: '#FF5148',
         backgroundSize: 'cover',
       }}>
-        <SideNavBar/>
         {this.modalPopup()}
         <Container style={pageStyle}>
           <Grid className='profileGrid'>

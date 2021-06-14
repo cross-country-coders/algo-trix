@@ -64,7 +64,7 @@ class HomePage extends React.Component {
         <div>
           <Header as = "h2" textAlign="center"> Trees</Header>
           <Container text textAlign='center'>
-            <p> The more different types of trees that you will learn in ALgorithms course.</p>
+            <p> The more different types of trees that you will learn in Algorithms course.</p>
           </Container>
         </div>
         <Footer/>

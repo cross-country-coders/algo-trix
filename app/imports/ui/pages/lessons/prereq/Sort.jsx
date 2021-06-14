@@ -1,14 +1,12 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
-import SideNavBar from '../../../components/SideNavBar';
 import SortNotes from '../../../components/notes/SortNotes';
 import SortPractice from '../../../components/practice/proof/SortPractice';
 
-class Sort extends React.Component {
+export default class Sort extends React.Component {
   render() {
     return (
       <div>
-        <SideNavBar/>
         <div className='red'>
           <Container>
             <Header as = 'h2' textAlign='center' inverted>Sorting Alogrithm</Header>
@@ -32,4 +30,3 @@ class Sort extends React.Component {
     );
   }
 }
-export default Sort;
