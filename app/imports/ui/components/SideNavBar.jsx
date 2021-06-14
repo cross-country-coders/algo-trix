@@ -50,6 +50,11 @@ class SideNavBar extends React.Component {
       /!* overflowX: 'hidden', /!* Disable horizontal scroll *!/ *!/
       paddingTop: '20px',
     }; */
+
+    if (this.props.currentUser === '') {
+      return ('');
+    }
+
     return (
       <div>
         <Button style={{ position: 'fixed', zIndex: 1, top: 0, height: '100vh', borderRadius: 0 }} attached={'right'} icon color='grey' disabled={false} onClick={this.handleShowClick}>

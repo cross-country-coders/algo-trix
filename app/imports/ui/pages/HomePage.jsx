@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Header, Container, Card } from 'semantic-ui-react';
-import SideNavBar from '../components/SideNavBar';
 import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
@@ -9,7 +8,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <SideNavBar/>
         <div className='red'>
           <Header as = 'h1' textAlign='center' inverted>WELCOME </Header>
           <Container text textAlign='center'>

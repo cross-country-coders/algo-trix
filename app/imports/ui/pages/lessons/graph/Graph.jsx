@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
-import SideNavBar from '../../../components/SideNavBar';
 import GraphNotes from '../../../components/notes/GraphNotes';
 import GraphPractice from '../../../components/practice/graph/GraphPractie';
 
@@ -8,7 +7,6 @@ class Graph extends React.Component {
   render() {
     return (
       <div>
-        <SideNavBar/>
         <div className='red'>
           <Header as = 'h2' textAlign='center' inverted>Graph Theory</Header>
           <Container textAlign='center'>
