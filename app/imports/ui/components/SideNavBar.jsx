@@ -76,14 +76,14 @@ class SideNavBar extends React.Component {
             <Icon name='bars'/>
           </Button>
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="navbar-home"
-            as={NavLink} exact to="/home">
+            as={NavLink} exact to="/home" onClick={this.handleShowClick}>
             <IconGroup>
               <Icon name='home'/>
               Home
             </IconGroup>
           </Menu.Item>
           <Menu.Item style={{ floated: 'left', width: '100%' }} id="'user'"
-            as={NavLink} exact to="/profile">
+            as={NavLink} exact to="/profile" onClick={this.handleShowClick}>
             <IconGroup>
               <Icon name='user'/>
               Profile
@@ -116,7 +116,7 @@ class SideNavBar extends React.Component {
 
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ width: '100%' }} id="navbar-UserList"
-              as={NavLink} exact to="/listusers">
+              as={NavLink} exact to="/listusers" onClick={this.handleShowClick}>
               <IconGroup>
                 <Icon name='list'/>
                   Users
