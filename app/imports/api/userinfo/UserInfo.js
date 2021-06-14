@@ -54,13 +54,12 @@ class UserInfoCollection extends BaseCollection {
    * @param docID the id of the document to update.
    * @param firstName the first name of the person (optional).
    * @param lastName the last name of the person (optional).
-   * @param user the user name of the person (optional).
-   * @param email the email of the person (optional).
    * @param password the password of the person (optional).
-   * @param zipcode the zipcode of the person (optional).
+   * @param userImage the URL image of the person to (optional).
    */
-  update(docID, { firstName, email, lastName, password, userImage }) {
+  update(docID, { firstName, lastName, password, userImage }) {
     const updateData = {};
+
     if (firstName) {
       updateData.firstName = firstName;
     }
@@ -73,10 +72,7 @@ class UserInfoCollection extends BaseCollection {
     }
 
     if (userImage) {
-      updateData.image = userImage;
-    }
-    if (email) {
-      updateData._id = email;
+      updateData.userImage = userImage;
     }
 
     this._collection.update(docID, { $set: updateData });
