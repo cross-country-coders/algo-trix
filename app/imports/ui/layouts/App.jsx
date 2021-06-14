@@ -20,6 +20,7 @@ import AdminListUsers from '../pages/AdminListUsers';
 import ProofMethod from '../pages/lessons/prereq/ProofMethod';
 import Sort from '../pages/lessons/prereq/Sort';
 import Graph from '../pages/lessons/graph/Graph';
+import ShortPath from '../pages/lessons/graph/ShortPath';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
             <ProtectedRoute path="/proof" component={ProofMethod}/>
             <ProtectedRoute path="/sort" component={Sort}/>
             <ProtectedRoute path="/graph" component={Graph}/>
+            <ProtectedRoute path="/short" component={ShortPath}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
