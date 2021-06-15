@@ -17,6 +17,10 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import AdminListUsers from '../pages/AdminListUsers';
+import ProofMethod from '../pages/lessons/prereq/ProofMethod';
+import Sort from '../pages/lessons/prereq/Sort';
+import Graph from '../pages/lessons/graph/Graph';
+import SideNavBar from '../components/SideNavBar';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -24,6 +28,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
+          <SideNavBar />
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
@@ -35,6 +40,9 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <ProtectedRoute path="/change/:_id" component={EditProfile}/>
+            <ProtectedRoute path="/proof" component={ProofMethod}/>
+            <ProtectedRoute path="/sort" component={Sort}/>
+            <ProtectedRoute path="/graph" component={Graph}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>

@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { userInfoUpdateMethod } from '../../api/userinfo/UserInfoCollection.methods';
 import { UserInfos } from '../../api/userinfo/UserInfo';
-import SideNavBar from '../components/SideNavBar';
 
 class EditProfile extends React.Component {
   constructor(props) {
@@ -73,7 +72,6 @@ class EditProfile extends React.Component {
         background: '#FF6961',
         backgroundSize: 'cover',
       }}>
-        <SideNavBar/>
         <Container style={pageStyle}>
           <Header inverted as = "h2" style = {{ fontFamily: 'sans-serif', fontWeight: 'lighter' }} textAlign="center">Edit Profile</Header>
           <Grid>

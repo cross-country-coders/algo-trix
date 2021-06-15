@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header, Container, Card, Button } from 'semantic-ui-react';;
-import SideNavBar from '../components/SideNavBar';
+import { NavLink } from 'react-router-dom';
+import { Header, Container, Card } from 'semantic-ui-react';
 import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
@@ -8,7 +8,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <SideNavBar/>
         <div className='red'>
           <Header as = 'h1' textAlign='center' inverted>WELCOME </Header>
           <Container text textAlign='center'>
@@ -18,40 +17,28 @@ class HomePage extends React.Component {
         <Container textAlign="center">
           <p> Some of the prereq materials you should review before taking Algorithms course.</p>
           <Card.Group centered itemsPerRow = {4}>
-            <Card>
+            <Card link as ={NavLink} exact to ="/sort">
               <Card.Content>
                 <Card.Header>Sorting Algorithms</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
-            <Card>
+            <Card link as = {NavLink} exact to = "/proof">
               <Card.Content>
                 <Card.Header>Proof Methods</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
             <Card>
-              <Card.Content>
+              <Card.Content link>
                 <Card.Header>Run Time</Card.Header>
                 <Card.Description>Review on the different runtimes..</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
             <Card>
-              <Card.Content>
-                <Card.Header>Basic ADTS</Card.Header>
+              <Card.Content link>
+                <Card.Header>Basic ADTs</Card.Header>
                 <Card.Description>Review on the Stacks, Queues, and Lists</Card.Description>
-                <Card.Content extra>
-                  <Button>CLICK</Button>
-                </Card.Content>
               </Card.Content>
             </Card>
           </Card.Group>
@@ -63,6 +50,14 @@ class HomePage extends React.Component {
             <Container text textAlign='center'>
               <p>This covers topics such as MST, little Graph Theory, etc. </p>
             </Container>
+            <Card.Group centered itemsPerRow = {4}>
+              <Card link as = {NavLink} exact to = "/graph">
+                <Card.Content>
+                  <Card.Header>Graph and Theory</Card.Header>
+                  <Card.Description>Review on Graph and Adjacency</Card.Description>
+                </Card.Content>
+              </Card>
+            </Card.Group>
           </Container>
           <br/>
         </div>

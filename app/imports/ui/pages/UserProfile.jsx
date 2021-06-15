@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { Loader, Container, Image, Button, Header, Segment, Grid, Icon } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import { UserInfos } from '../../api/userinfo/UserInfo';
-import SideNavBar from '../components/SideNavBar';
 
 class UserProfile extends React.Component {
   render() {
@@ -26,7 +25,6 @@ class UserProfile extends React.Component {
         backgroundSize: 'cover',
 
       }}>
-        <SideNavBar/>
         <Container style={pageStyle}>
           <Grid className={'profileGrid'}>
 

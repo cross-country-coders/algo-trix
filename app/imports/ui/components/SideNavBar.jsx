@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar } from 'semantic-ui-react';
+import { Menu, Button, Icon, IconGroup, Sidebar, Label } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import SignOutConfirmation from './SignOutConfirmation';
+import { UserInfos } from '../../api/userinfo/UserInfo';
 // import 'app/client/index.css';
 
 /*
@@ -49,6 +50,11 @@ class SideNavBar extends React.Component {
       /!* overflowX: 'hidden', /!* Disable horizontal scroll *!/ *!/
       paddingTop: '20px',
     }; */
+
+    if (this.props.currentUser === '') {
+      return ('');
+    }
+
     return (
       <div>
         <Button style={{ position: 'fixed', zIndex: 1, top: 0, height: '100vh', borderRadius: 0 }} attached={'right'} icon color='grey' disabled={false} onClick={this.handleShowClick}>
@@ -113,18 +119,11 @@ class SideNavBar extends React.Component {
               as={NavLink} exact to="/listusers">
               <IconGroup>
                 <Icon name='list'/>
-                  User List
+                  Users
               </IconGroup>
+              <Label circular size='small' color='orange'>{this.props.count}</Label>
             </Menu.Item>
           ) : ''}
-
-          <Menu.Item style={{ width: '100%' }} id="navbar-UserCount"
-            as={NavLink} exact to="">
-            <IconGroup>
-              <Icon name='sort numeric up'/>
-              User Count
-            </IconGroup>
-          </Menu.Item>
 
           <SignOutConfirmation id="navbar-sign-out" as={NavLink} exact to="/signout" style={{ padding: 0, margin: 0 }}/>
         </Sidebar>
@@ -168,12 +167,20 @@ class SideNavBar extends React.Component {
 // Declare the types of all properties.
 SideNavBar.propTypes = {
   currentUser: PropTypes.string,
+  ready: PropTypes.bool.isRequired,
+  count: PropTypes.number,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-const NavBarContainer = withTracker(() => ({
-  currentUser: Meteor.user() ? Meteor.user().username : '',
-}))(SideNavBar);
+const NavBarContainer = withTracker(() => {
+  const curr = Meteor.user() ? Meteor.user().username : '';
+  const subscription = (Roles.userIsInRole(Meteor.userId(), 'admin')) ? UserInfos.subscribeUserInfoAdmin() : UserInfos.subscribeUserInfo();
+  return {
+    currentUser: curr,
+    ready: subscription.ready(),
+    count: UserInfos.find({}).count(),
+  };
+})(SideNavBar);
 
 // Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter
 export default withRouter(NavBarContainer);

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -7,7 +6,6 @@ import { Loader, Header, Segment, Grid } from 'semantic-ui-react';
 import swal from 'sweetalert';
 import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-semantic';
 import { UserInfos } from '../../api/userinfo/UserInfo';
-import SideNavBar from '../components/SideNavBar';
 
 class EditProfile extends React.Component {
   submit(data) {
@@ -25,7 +23,6 @@ class EditProfile extends React.Component {
     const bridge = new SimpleSchema2Bridge(UserInfos.getSchema());
     return (
       <Grid container centered>
-        <SideNavBar/>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Profile</Header>
           <AutoForm schema={bridge} onSubmit={data => {

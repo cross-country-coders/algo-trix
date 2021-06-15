@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Label, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { UserInfos } from '../../api/userinfo/UserInfo';
-import SideNavBar from '../components/SideNavBar';
 import ListUserTable from '../components/ListUserTable';
 
 class AdminListUsers extends React.Component {
@@ -24,7 +23,7 @@ class AdminListUsers extends React.Component {
   render() {
     return (this.props.ready) ? this.renderPage() : <div
       className={'loaderStyle'}>
-      <Loader active inverted> Getting data</Loader>
+      <Loader active inverted>Getting data</Loader>
     </div>;
   }
 
@@ -37,9 +36,10 @@ class AdminListUsers extends React.Component {
 
     return (
       <div>
-        <SideNavBar/>
         <div className="red">
-          <Header as = "h2" textAlign="center">User List</Header>
+          <Header as = "h1" textAlign="center" inverted>
+            User List <Label color='orange'><Icon name='user'/>{this.props.profiles.length}</Label>
+          </Header>
         </div>
         <Container>
           <Table celled>
