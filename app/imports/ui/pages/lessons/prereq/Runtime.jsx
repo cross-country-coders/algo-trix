@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import RuntimeNotes from '../../../components/notes/RuntimeNotes';
+import RuntimePractice from '../../../components/practice/RuntimePractice';
 
 export default class Runtime extends React.Component {
   render() {
@@ -15,6 +16,8 @@ export default class Runtime extends React.Component {
         <br/>
         <Container>
           <RuntimeNotes />
+          <Header as = 'h3' textAlign='center'>Example Problems (Python)</Header>
+          <RuntimePractice />
         </Container>
       </div>
     );

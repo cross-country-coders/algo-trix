@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Tab, Modal, Button } from 'semantic-ui-react';
 
-class ProofPractice extends React.Component {
+export default class ProofPractice extends React.Component {
   render() {
     const samplePane = [
       { menuItem: 'Sample 1', render: () => <Tab.Pane textAlign ='center'><b>Prove the following formula</b>
@@ -18,4 +18,4 @@ class ProofPractice extends React.Component {
       <Tab panes={samplePane}/>
     );
   }
-} export default ProofPractice;
+}

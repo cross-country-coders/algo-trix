@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Image } from 'semantic-ui-react';
+import { Tab, Image, Header } from 'semantic-ui-react';
 
 export default class RuntimeNotes extends React.Component {
   render() {
@@ -10,6 +10,9 @@ export default class RuntimeNotes extends React.Component {
         never exceeds O(...)
     </Tab.Pane> }, {
       menuItem: 'Big-O Chart', render: () => <Tab.Pane>
+        <Header as = 'h2' textAlign='center'>
+            Different types of big-O and their relative data size vs. run time
+        </Header>
         <Image src='images/big-o.jpg' centered />
       </Tab.Pane> }];
     return (

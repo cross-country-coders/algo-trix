@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import SortNotes from '../../../components/notes/SortNotes';
-import SortPractice from '../../../components/practice/proof/SortPractice';
+import SortPractice from '../../../components/practice/SortPractice';
 
 export default class Sort extends React.Component {
   render() {
