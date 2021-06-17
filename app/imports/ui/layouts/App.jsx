@@ -18,6 +18,7 @@ import Sort from '../pages/lessons/prereq/Sort';
 import Graph from '../pages/lessons/graph/Graph';
 import Contact from '../pages/Contact';
 import Runtime from '../pages/lessons/prereq/Runtime';
+import Stack from '../pages/lessons/prereq/Stack';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
             <ProtectedRoute path="/sort" component={Sort}/>
             <ProtectedRoute path="/graph" component={Graph}/>
             <ProtectedRoute path="/contact" component={Contact}/>
+            <ProtectedRoute path="/stack" component={Stack}/>
             <ProtectedRoute path="/runtime" component={Runtime} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>

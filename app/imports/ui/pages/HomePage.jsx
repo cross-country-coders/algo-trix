@@ -35,7 +35,7 @@ class HomePage extends React.Component {
                 <Card.Description>Review on the different runtimes..</Card.Description>
               </Card.Content>
             </Card>
-            <Card link>
+            <Card link as ={NavLink} exact to ='/stack'>
               <Card.Content>
                 <Card.Header>Basic ADTs</Card.Header>
                 <Card.Description>Review on the Stacks, Queues, and Lists</Card.Description>
