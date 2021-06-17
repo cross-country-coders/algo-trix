@@ -17,26 +17,26 @@ class HomePage extends React.Component {
         <Container textAlign="center">
           <p> Some of the prereq materials you should review before taking Algorithms course.</p>
           <Card.Group centered itemsPerRow = {4}>
-            <Card link as ={NavLink} exact to ="/sort">
+            <Card link as={NavLink} exact to='/sort'>
               <Card.Content>
                 <Card.Header>Sorting Algorithms</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
               </Card.Content>
             </Card>
-            <Card link as = {NavLink} exact to = "/proof">
+            <Card link as={NavLink} exact to='/proof'>
               <Card.Content>
                 <Card.Header>Proof Methods</Card.Header>
                 <Card.Description>Review on the different sorting algorithms.</Card.Description>
               </Card.Content>
             </Card>
-            <Card>
-              <Card.Content link>
+            <Card link as={NavLink} exact to='/runtime'>
+              <Card.Content>
                 <Card.Header>Run Time</Card.Header>
                 <Card.Description>Review on the different runtimes..</Card.Description>
               </Card.Content>
             </Card>
-            <Card>
-              <Card.Content link>
+            <Card link>
+              <Card.Content>
                 <Card.Header>Basic ADTs</Card.Header>
                 <Card.Description>Review on the Stacks, Queues, and Lists</Card.Description>
               </Card.Content>
@@ -64,7 +64,7 @@ class HomePage extends React.Component {
         <div>
           <Header as = "h2" textAlign="center"> Trees</Header>
           <Container text textAlign='center'>
-            <p> The more different types of trees that you will learn in ALgorithms course.</p>
+            <p> The more different types of trees that you will learn in Algorithms course.</p>
           </Container>
         </div>
         <Footer/>

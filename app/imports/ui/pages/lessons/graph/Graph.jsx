@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import GraphNotes from '../../../components/notes/GraphNotes';
-import GraphPractice from '../../../components/practice/graph/GraphPractie';
+import GraphPractice from '../../../components/practice/GraphPractie';
 
-class Graph extends React.Component {
+export default class Graph extends React.Component {
   render() {
     return (
       <div>
@@ -25,4 +25,3 @@ class Graph extends React.Component {
     );
   }
 }
-export default (Graph);

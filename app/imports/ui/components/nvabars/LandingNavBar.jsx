@@ -16,7 +16,7 @@ class LandingNavBar extends React.Component {
             <Header inverted as='h1'>Algo-Trix</Header>
           </Menu.Item>
           <Menu.Item position="right">
-            <SignInAndUp mode={'signin'}/>
+            <SignInAndUp mode='signin'/>
           </Menu.Item>
         </Menu>
       </Sticky>

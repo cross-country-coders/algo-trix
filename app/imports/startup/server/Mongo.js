@@ -17,12 +17,6 @@ function createUser(user, password, role) {
   }
 }
 
-function addUser(data) {
-  console.log((`\tAdding: ${data.firstName} ${data.lastName} (${data.owner} | ${data.userImage}) `));
-  UserInfos.define(data);
-  createUser(data.owner, data.password, data.role);
-}
-
 function addFakeProfile({ firstName, lastName, userImage, _id, password }) {
   console.log(`\tAdding Fake Profiles:\n\t\t${firstName} ${lastName} (${userImage})`);
   console.log(`\t\t${_id}  |  ${password}`);
@@ -30,19 +24,13 @@ function addFakeProfile({ firstName, lastName, userImage, _id, password }) {
   UserInfos.define({ firstName, lastName, owner: _id, password, userImage });
 }
 
-if (UserInfos.count() === 0) {
-  if (Meteor.settings.defaultUser) {
-    console.log('Creating default Users.');
-    Meteor.settings.defaultUser.map(data => addUser(data));
-  }
-}
-
 if (UserInfos.count() < 3) {
   const sampleUsers = generateUsers(6);
   sampleUsers.map(profile => addFakeProfile(profile));
 }
 
-if (Lesson.collection.find().count() === 0) {
+if (Lesson.collection.find().count() === 0 && false) {
+  // TODO: remove && false from parameter once addLesson has been implemented
   if (Meteor.settings.defaultLesson) {
     console.log('Creating default Lessons.');
     Meteor.settings.defaultLesson.map(data => addLesson(data));

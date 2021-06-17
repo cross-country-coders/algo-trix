@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Tab } from 'semantic-ui-react';
 
-class SortNotes extends React.Component {
+export default class SortNotes extends React.Component {
   render() {
     const proofPanes = [
       { menuItem: 'Insertion Sort', render: () => <Tab.Pane>
@@ -69,5 +69,3 @@ class SortNotes extends React.Component {
     );
   }
 }
-
-export default SortNotes;

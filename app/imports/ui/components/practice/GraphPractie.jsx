@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab } from 'semantic-ui-react';
 
-class GraphPractice extends React.Component {
+export default class GraphPractice extends React.Component {
   render() {
     const samplePane = [
       { menuItem: 'Sample 1', render: () => <Tab.Pane textAlign ='center'>
@@ -22,4 +22,4 @@ class GraphPractice extends React.Component {
       <Tab panes={samplePane}/>
     );
   }
-} export default GraphPractice;
+}

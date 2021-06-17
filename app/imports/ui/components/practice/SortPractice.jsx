@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Tab } from 'semantic-ui-react';
 
-class SortPractice extends React.Component {
+export default class SortPractice extends React.Component {
   render() {
     const sortProblem = [
       { menuItem: 'Sample 1', render: () => <Tab.Pane>
@@ -41,4 +41,4 @@ class SortPractice extends React.Component {
     );
   }
 }
-export default SortPractice;
+

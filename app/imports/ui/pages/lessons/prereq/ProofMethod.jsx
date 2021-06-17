@@ -1,9 +1,9 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import ProofNotes from '../../../components/notes/ProofNotes';
-import ProofPractice from '../../../components/practice/proof/ProofPractice';
+import ProofPractice from '../../../components/practice/ProofPractice';
 
-class ProofMethod extends React.Component {
+export default class ProofMethod extends React.Component {
   render() {
     return (
       <div>
@@ -24,4 +24,3 @@ class ProofMethod extends React.Component {
     );
   }
 }
-export default (ProofMethod);

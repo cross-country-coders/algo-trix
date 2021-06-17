@@ -4,24 +4,20 @@ import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import UserProfile from '../pages/UserProfile';
-import EditProfile from '../pages/EditProfle';
+import SideNavBar from '../components/SideNavBar';
 import Landing from '../pages/Landing';
 import HomePage from '../pages/HomePage';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import UserProfile from '../pages/UserProfile';
 import AdminListUsers from '../pages/AdminListUsers';
 import ProofMethod from '../pages/lessons/prereq/ProofMethod';
 import Sort from '../pages/lessons/prereq/Sort';
 import Graph from '../pages/lessons/graph/Graph';
-import SideNavBar from '../components/SideNavBar';
 import Contact from '../pages/Contact';
+import Runtime from '../pages/lessons/prereq/Runtime';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,16 +32,12 @@ class App extends React.Component {
             <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/home" component={HomePage}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/profile" component={UserProfile}/>
-            <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-            <ProtectedRoute path="/change/:_id" component={EditProfile}/>
             <ProtectedRoute path="/proof" component={ProofMethod}/>
             <ProtectedRoute path="/sort" component={Sort}/>
             <ProtectedRoute path="/graph" component={Graph}/>
             <ProtectedRoute path="/contact" component={Contact}/>
-            <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+            <ProtectedRoute path="/runtime" component={Runtime} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
           </Switch>
