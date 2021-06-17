@@ -7,7 +7,6 @@ import { SimpleSchema2Bridge } from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import { UserInfos } from '../../api/userinfo/UserInfo';
-import SideNavBar from '../components/SideNavBar';
 
 const updateBridge = new SimpleSchema2Bridge(new SimpleSchema({
   email: String,
