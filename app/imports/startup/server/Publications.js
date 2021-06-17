@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Roles } from 'meteor/alanning:roles';
 import { UserInfos } from '../../api/userinfo/UserInfo';
 import { Lesson } from '../../api/lesson/Lesson';
 
