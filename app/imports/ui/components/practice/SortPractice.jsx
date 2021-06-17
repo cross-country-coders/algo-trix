@@ -41,4 +41,3 @@ export default class SortPractice extends React.Component {
     );
   }
 }
-
