@@ -1,6 +1,8 @@
 import React from 'react';
 import { Header, Container } from 'semantic-ui-react';
 import StackNotes from '../../../components/notes/StackNotes';
+import StackPractice from '../../../components/practice/StackPractice';
+
 export default class Stack extends React.Component {
   render() {
     return (
@@ -16,6 +18,7 @@ export default class Stack extends React.Component {
           <Header as = 'h3' textAlign='center'>The Concept of Stack and Queues </Header>
           <StackNotes/>
           <Header as = 'h3' textAlign='center'>Example Problems</Header>
+          <StackPractice/>
         </Container>
       </div>
     );

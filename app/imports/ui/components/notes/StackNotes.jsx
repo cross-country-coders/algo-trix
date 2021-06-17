@@ -21,12 +21,26 @@ class StackNotes extends React.Component {
             Return <b>True</b> iff the stack is empty</li>
           </ul>
         </ul>
+        <Container textAlign='center'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/niBsGw4h5yI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </Container>
       </Tab.Pane> },
       { menuItem: 'Queue', render: () => <Tab.Pane>
         <ul>
-          <li> Space needed: O(n+k)</li>
-          <li> List all verticies that are adjacent: O(degree(u))</li>
-          <li> Determine whether (u,v) &#x2208; E : O(degree(u)) </li>
+          <li>First In First Out Property</li>
+          <li>items are removed from the order they are added</li>
+          <li><b>Operation of Queue</b></li>
+          <ul>
+            <li><code>add(item)</code><br/>
+            Add an item to the end of the list</li>
+            <li><code>remove()</code> <br/>
+            Remove the first item in the list</li>
+            <li><code>peek()</code><br/>
+            return the top of the queue</li>
+            <li><code>isEmpty()</code><br/>
+            Return <b>true</b> iff the queue is empty</li>
+          </ul>
         </ul>
         <Container textAlign='center'>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/4R7chuhzq7k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
