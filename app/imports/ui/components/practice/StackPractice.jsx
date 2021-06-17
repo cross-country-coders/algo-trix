@@ -7,14 +7,13 @@ export default class StackPractice extends React.Component {
       { menuItem: 'Sample 1', render: () => <Tab.Pane textAlign ='center'>
         <b>Describe how you could use a single array to implement three tasks?</b>
       </Tab.Pane> },
-      { menuItem: 'Sample 2', render: () => <Tab.Pane><b>Given an array representation A of a graph G=(V,E), and assuming randomly distributed graphs, what is the time complexity in terms of V and E to determine whether
-          an edge exists from vertex u to vertex v, and why?</b></Tab.Pane> },
+      { menuItem: 'Sample 2', render: () => <Tab.Pane>
+          What is the tightest bound on the worst case asymptotic cost of queue enqueue and
+          dequeue operations under the array implementations
+      </Tab.Pane> },
       { menuItem: 'Sample 3', render: () => <Tab.Pane><b>Explain the type of the edges:</b>
-        <ol>
-          <li> Forward Edge</li>
-          <li> Backward Edge</li>
-          <li> Cross Edge</li>
-        </ol></Tab.Pane> },
+        <b>Write a program to sort a stack such that the smallest items are on the top.</b>
+      </Tab.Pane> },
     ];
     return (
       <Tab panes={samplePane}/>
