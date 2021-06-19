@@ -57,6 +57,12 @@ class HomePage extends React.Component {
                   <Card.Description>Review on Graph and Adjacency</Card.Description>
                 </Card.Content>
               </Card>
+              <Card link as = {NavLink} exact to = "/mst">
+                <Card.Content>
+                  <Card.Header>Minimum Span Tree</Card.Header>
+                  <Card.Description>Review notes and practice on MST.</Card.Description>
+                </Card.Content>
+              </Card>
             </Card.Group>
           </Container>
           <br/>
