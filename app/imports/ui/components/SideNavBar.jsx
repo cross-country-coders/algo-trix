@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Button, Icon, IconGroup, Sidebar, Label } from 'semantic-ui-react';
+import { Menu, Dropdown, Button, Icon, IconGroup, Sidebar, Label } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 // import 'react-pro-sidebar/dist/css/styles.css';
 import SignOutConfirmation from './SignOutConfirmation';
@@ -89,13 +89,14 @@ class SideNavBar extends React.Component {
               Profile
             </IconGroup>
           </Menu.Item>
-          <Menu.Item style={{ width: '100%' }} id="navbar-Prereq"
-            as={NavLink} exact to="">
-            <IconGroup>
-              <Icon name='pencil square'/>
-              Prereq Materials
-            </IconGroup>
-          </Menu.Item>
+          <Dropdown fluid selection icon= 'pencil square' text='Prereq Materials' className='link item'>
+            <Dropdown.Menu>
+              <Dropdown.Item>Inbox</Dropdown.Item>
+              <Dropdown.Item>Starred</Dropdown.Item>
+              <Dropdown.Item>Sent Mail</Dropdown.Item>
+              <Dropdown.Item>Drafts (143)</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
 
           <Menu.Item style={{ width: '100%' }} id="navbar-Contact"
             as={NavLink} exact to="/Contact">
