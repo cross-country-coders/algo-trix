@@ -57,6 +57,12 @@ class HomePage extends React.Component {
                   <Card.Description>Review on Graph and Adjacency</Card.Description>
                 </Card.Content>
               </Card>
+              <Card link as = {NavLink} exact to = "/single">
+                <Card.Content>
+                  <Card.Header>Single Source Shortest Path</Card.Header>
+                  <Card.Description>Review on Single Shortest Path.</Card.Description>
+                </Card.Content>
+              </Card>
             </Card.Group>
           </Container>
           <br/>

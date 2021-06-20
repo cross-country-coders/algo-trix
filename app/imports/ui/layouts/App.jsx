@@ -20,6 +20,7 @@ import Contact from '../pages/Contact';
 import Runtime from '../pages/lessons/prereq/Runtime';
 import Stack from '../pages/lessons/prereq/Stack';
 import MST from '../pages/lessons/graph/MST';
+import SinglePath from '../pages/lessons/graph/SinglePath';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
             <ProtectedRoute path="/contact" component={Contact}/>
             <ProtectedRoute path="/stack" component={Stack}/>
             <ProtectedRoute path="/runtime" component={Runtime} />
+            <ProtectedRoute path="/single" component={SinglePath} />
             <ProtectedRoute path="/mst" component={MST} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
