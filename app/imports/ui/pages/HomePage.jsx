@@ -57,6 +57,15 @@ class HomePage extends React.Component {
                   <Card.Description>Review on Graph and Adjacency</Card.Description>
                 </Card.Content>
               </Card>
+            </Card.Group>
+          </Container>
+          <br/>
+        </div>
+        <div>
+          <Header as = "h2" textAlign="center"> Trees</Header>
+          <Container text textAlign='center'>
+            <p> The more different types of trees that you will learn in Algorithms course.</p>
+            <Card.Group centered itemsPerRow={4}>
               <Card link as = {NavLink} exact to = "/mst">
                 <Card.Content>
                   <Card.Header>Minimum Span Tree</Card.Header>
@@ -66,12 +75,6 @@ class HomePage extends React.Component {
             </Card.Group>
           </Container>
           <br/>
-        </div>
-        <div>
-          <Header as = "h2" textAlign="center"> Trees</Header>
-          <Container text textAlign='center'>
-            <p> The more different types of trees that you will learn in Algorithms course.</p>
-          </Container>
         </div>
         <Footer/>
       </div>
