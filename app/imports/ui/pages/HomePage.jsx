@@ -63,6 +63,12 @@ class HomePage extends React.Component {
                   <Card.Description>Review on Single Shortest Path.</Card.Description>
                 </Card.Content>
               </Card>
+              <Card link as = {NavLink} exact to = "/allshort">
+                <Card.Content>
+                  <Card.Header>All Pair Shortest Path</Card.Header>
+                  <Card.Description>Review on All Pair Shortest Path.</Card.Description>
+                </Card.Content>
+              </Card>
             </Card.Group>
           </Container>
           <br/>
