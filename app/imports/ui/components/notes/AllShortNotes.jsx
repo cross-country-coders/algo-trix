@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Header } from 'semantic-ui-react';
+import { Tab, Header, Image } from 'semantic-ui-react';
 
 class StackNotes extends React.Component {
   render() {
@@ -21,6 +21,7 @@ class StackNotes extends React.Component {
         </ul>
       </Tab.Pane> },
       { menuItem: 'Johnson Algorithm', render: () => <Tab.Pane>
+        <Image src='images/johnson.png' centered size='medium'/>
         <ul>
           <li>Define h(v) = &delta;(s,v) for all v in V</li>
           <li>&Theta;(V) to find G</li>
@@ -30,6 +31,13 @@ class StackNotes extends React.Component {
           <li>&Theta;(V^2) to initialize D</li>
           <li>Overall RunTime: O(V E lg V)</li>
           <li>With Fibonnaci Heaps: O(V^2 lg V + V E)</li>
+        </ul>
+      </Tab.Pane> },
+      { menuItem: 'Floyd Warshall', render: () => <Tab.Pane>
+        <Image src='images/floyd.png' centered size='medium'/>
+        <ul>
+          <li>Works with negative weight edges</li>
+          <li>RunTime O(V^3)</li>
         </ul>
       </Tab.Pane> },
     ];
