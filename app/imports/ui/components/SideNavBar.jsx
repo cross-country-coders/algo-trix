@@ -96,7 +96,6 @@ class SideNavBar extends React.Component {
               Prereq Materials
             </IconGroup>
           </Menu.Item>
-
           <Menu.Item style={{ width: '100%' }} id="navbar-Contact"
             as={NavLink} exact to="/Contact">
             <IconGroup>
@@ -104,16 +103,6 @@ class SideNavBar extends React.Component {
               Contact Admin
             </IconGroup>
           </Menu.Item>
-          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-            <Menu.Item style={{ width: '100%' }} id="navbar-Admin"
-              as={NavLink} exact to="">
-              <IconGroup>
-                <Icon name='cog'/>
-                  Admin
-              </IconGroup>
-            </Menu.Item>
-          ) : ''}
-
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item style={{ width: '100%' }} id="navbar-UserList"
               as={NavLink} exact to="/listusers" onClick={this.handleShowClick}>
