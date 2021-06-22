@@ -7,9 +7,6 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import SideNavBar from '../components/SideNavBar';
 import Landing from '../pages/Landing';
 import HomePage from '../pages/HomePage';
-import NotFound from '../pages/NotFound';
-import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import UserProfile from '../pages/UserProfile';
 import AdminListUsers from '../pages/AdminListUsers';
@@ -31,9 +28,6 @@ class App extends React.Component {
         <div>
           <SideNavBar />
           <Switch>
-            <Route exact path="/" component={Landing}/>
-            <Route path="/signin" component={Signin}/>
-            <Route path="/signup" component={Signup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/home" component={HomePage}/>
             <ProtectedRoute path="/profile" component={UserProfile}/>
@@ -48,7 +42,7 @@ class App extends React.Component {
             <ProtectedRoute path="/max" component={MaxFlow} />
             <ProtectedRoute path="/allshort" component={AllShortPath} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
-            <Route component={NotFound}/>
+            <Route component={Landing}/>
           </Switch>
         </div>
       </Router>
