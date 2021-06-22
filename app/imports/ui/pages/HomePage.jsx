@@ -84,6 +84,12 @@ class HomePage extends React.Component {
                   <Card.Description>Review notes and practice on MST.</Card.Description>
                 </Card.Content>
               </Card>
+              <Card link as = {NavLink} exact to = "/max">
+                <Card.Content>
+                  <Card.Header>Maximum Flow</Card.Header>
+                  <Card.Description>Review on All Pair Shortest Path.</Card.Description>
+                </Card.Content>
+              </Card>
             </Card.Group>
           </Container>
           <br/>

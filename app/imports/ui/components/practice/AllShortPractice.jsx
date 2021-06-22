@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab } from 'semantic-ui-react';
+import { Image, Tab } from 'semantic-ui-react';
 
 class StackNotes extends React.Component {
   render() {
@@ -9,6 +9,7 @@ class StackNotes extends React.Component {
       </Tab.Pane> },
       { menuItem: 'Practice Problem 2', render: () => <Tab.Pane>
         <b>Run Floyd Warshall, showing the matrix D^(k) for each value of k.</b>
+        <Image src='images/floydpractice.png' centered size='medium'/>
       </Tab.Pane> },
       { menuItem: 'Practice Problem 3', render: () => <Tab.Pane>
         <b>After a given iteration of the loop line 3 of Floyd Warshall, we have computed</b>

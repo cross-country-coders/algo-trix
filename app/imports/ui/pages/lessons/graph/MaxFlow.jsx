@@ -3,7 +3,7 @@ import { Header, Container } from 'semantic-ui-react';
 import MaxFlowNotes from '../../../components/notes/MaxFlowNotes';
 import MaxFlowPractice from '../../../components/practice/MaxFlowPractice';
 
-export default class MST extends React.Component {
+export default class MaxFlow extends React.Component {
   render() {
     return (
       <div>
