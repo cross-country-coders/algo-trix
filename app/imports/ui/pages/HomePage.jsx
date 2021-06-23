@@ -51,6 +51,12 @@ class HomePage extends React.Component {
               <p>This covers topics such as MST, little Graph Theory, etc. </p>
             </Container>
             <Card.Group centered itemsPerRow = {4}>
+              <Card link as = {NavLink} exact to = "/binary">
+                <Card.Content>
+                  <Card.Header>Binary Search Trees</Card.Header>
+                  <Card.Description>Review and Practice Binary Search Tree</Card.Description>
+                </Card.Content>
+              </Card>
               <Card link as = {NavLink} exact to = "/graph">
                 <Card.Content>
                   <Card.Header>Graph and Theory</Card.Header>

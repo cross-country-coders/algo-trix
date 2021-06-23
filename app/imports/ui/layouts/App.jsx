@@ -24,6 +24,7 @@ import SinglePath from '../pages/lessons/graph/SinglePath';
 import AllShortPath from '../pages/lessons/graph/AllShortPath';
 import MaxFlow from '../pages/lessons/graph/MaxFlow';
 import RedBlack from '../pages/lessons/graph/RedBlack';
+import Binary from '../pages/lessons/graph/Binary';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
@@ -49,6 +50,7 @@ class App extends React.Component {
             <ProtectedRoute path="/max" component={MaxFlow} />
             <ProtectedRoute path="/allshort" component={AllShortPath} />
             <ProtectedRoute path="/red-black" component={RedBlack} />
+            <ProtectedRoute path="/binary" component={Binary} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
           </Switch>
