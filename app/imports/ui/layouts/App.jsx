@@ -23,6 +23,7 @@ import MST from '../pages/lessons/graph/MST';
 import SinglePath from '../pages/lessons/graph/SinglePath';
 import AllShortPath from '../pages/lessons/graph/AllShortPath';
 import MaxFlow from '../pages/lessons/graph/MaxFlow';
+import RedBlack from '../pages/lessons/graph/RedBlack';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
@@ -47,6 +48,7 @@ class App extends React.Component {
             <ProtectedRoute path="/mst" component={MST} />
             <ProtectedRoute path="/max" component={MaxFlow} />
             <ProtectedRoute path="/allshort" component={AllShortPath} />
+            <ProtectedRoute path="/red-black" component={RedBlack} />
             <AdminProtectedRoute path="/listusers" component={AdminListUsers}/>
             <Route component={NotFound}/>
           </Switch>

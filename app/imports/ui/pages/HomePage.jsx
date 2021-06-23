@@ -78,6 +78,12 @@ class HomePage extends React.Component {
           <Container text textAlign='center'>
             <p> The more different types of trees that you will learn in Algorithms course.</p>
             <Card.Group centered itemsPerRow={4}>
+              <Card link as = {NavLink} exact to = "/red-black">
+                <Card.Content>
+                  <Card.Header>Red Black Trees</Card.Header>
+                  <Card.Description>Review on Red Black Trees</Card.Description>
+                </Card.Content>
+              </Card>
               <Card link as = {NavLink} exact to = "/mst">
                 <Card.Content>
                   <Card.Header>Minimum Span Tree</Card.Header>
