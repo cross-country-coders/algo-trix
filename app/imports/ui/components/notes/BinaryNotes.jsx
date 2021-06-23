@@ -40,7 +40,7 @@ class BinaryNotes extends React.Component {
     return (
       <div>
         <br/>
-        <Header as = 'h3' textAlign='center'>All Shortest Path</Header>
+        <Header as = 'h3' textAlign='center'>Things to Know or Memorize</Header>
         <Tab panes = {proofPanes}/>
       </div>
     );
