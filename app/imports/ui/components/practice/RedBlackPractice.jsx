@@ -23,7 +23,6 @@ class RedBlackPractice extends React.Component {
     return (
       <div>
         <br/>
-        <Header as = 'h3' textAlign='center'>All Shortest Path</Header>
         <Tab panes = {proofPanes}/>
       </div>
     );
