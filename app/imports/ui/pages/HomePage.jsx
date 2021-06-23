@@ -51,6 +51,12 @@ class HomePage extends React.Component {
               <p>This covers topics such as MST, little Graph Theory, etc. </p>
             </Container>
             <Card.Group centered itemsPerRow = {4}>
+              <Card link as = {NavLink} exact to = "/binary">
+                <Card.Content>
+                  <Card.Header>Binary Search Trees</Card.Header>
+                  <Card.Description>Review and Practice Binary Search Tree</Card.Description>
+                </Card.Content>
+              </Card>
               <Card link as = {NavLink} exact to = "/graph">
                 <Card.Content>
                   <Card.Header>Graph and Theory</Card.Header>
@@ -78,6 +84,12 @@ class HomePage extends React.Component {
           <Container text textAlign='center'>
             <p> The more different types of trees that you will learn in Algorithms course.</p>
             <Card.Group centered itemsPerRow={4}>
+              <Card link as = {NavLink} exact to = "/red-black">
+                <Card.Content>
+                  <Card.Header>Red Black Trees</Card.Header>
+                  <Card.Description>Review on Red Black Trees</Card.Description>
+                </Card.Content>
+              </Card>
               <Card link as = {NavLink} exact to = "/mst">
                 <Card.Content>
                   <Card.Header>Minimum Span Tree</Card.Header>
