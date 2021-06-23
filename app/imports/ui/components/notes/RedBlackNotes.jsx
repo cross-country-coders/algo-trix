@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Header } from 'semantic-ui-react';
+import { Tab, Header, Container } from 'semantic-ui-react';
 
 class RedBlackNotes extends React.Component {
   render() {
@@ -37,6 +37,10 @@ class RedBlackNotes extends React.Component {
           <li>Insertion: O(log n)</li>
           <li>Recolor and Violation Clean Up: O(1)</li>
         </ul>
+        <Container textAlign = "center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/5IBxA-bZZH8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </Container>
       </Tab.Pane> },
     ];
     return (
