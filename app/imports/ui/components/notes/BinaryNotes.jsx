@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Header, Image } from 'semantic-ui-react';
+import { Tab, Header } from 'semantic-ui-react';
 
 class BinaryNotes extends React.Component {
   render() {
@@ -13,32 +13,27 @@ class BinaryNotes extends React.Component {
           <li>Height h is at least lg(n+1) - 1 and at most (n-1)/2</li>
         </ul>
       </Tab.Pane> },
-      { menuItem: 'Iterated Dijkstra', render: () => <Tab.Pane>
+      { menuItem: 'BST Property', render: () => <Tab.Pane>
         <ul>
-          <li>|V| iteragtion gives O(VE lg V)</li>
-          <li>Dense Graph takes O(V^3 lg V)</li>
-          <li>Using Fibonnaci Heaps: O(V^2 lg V + VE)</li>
-          <li>Does not work with Negative Weights</li>
+          <li>y is the left of x implies that the key of y is less than or equal to key of x</li>
+          <li>y is the right of x implies that the key of y is greater than or equal to key of x</li>
         </ul>
       </Tab.Pane> },
-      { menuItem: 'Johnson Algorithm', render: () => <Tab.Pane>
-        <Image src='images/johnson.png' centered size='medium'/>
+      { menuItem: 'Heap', render: () => <Tab.Pane>
         <ul>
-          <li>Define h(v) = &delta;(s,v) for all v in V</li>
-          <li>&Theta;(V) to find G</li>
-          <li>O(VE) to run BellMan ford</li>
-          <li>O(V) to find h(v)</li>
-          <li>&Theta;(E) to compute w</li>
-          <li>&Theta;(V^2) to initialize D</li>
-          <li>Overall RunTime: O(V E lg V)</li>
-          <li>With Fibonnaci Heaps: O(V^2 lg V + V E)</li>
+          <li>Number of nodes in nearly complete binary tree of height h is 2^(h+1)-1</li>
+          <li>Height of an N node nearly complete binary tree is h = log(N)</li>
+          <li>Roof of the tree is A[1]</li>
+          <li>Parent of A[i] is A[i/2]</li>
+          <li>Left child of A[i] is A[2i]</li>
+          <li>Right child of A[i] is A[2i+1]</li>
         </ul>
       </Tab.Pane> },
-      { menuItem: 'Floyd Warshall', render: () => <Tab.Pane>
-        <Image src='images/floyd.png' centered size='medium'/>
+      { menuItem: 'Runtime of Heap', render: () => <Tab.Pane>
         <ul>
-          <li>Works with negative weight edges</li>
-          <li>RunTime O(V^3)</li>
+          <li>Max-Heapify: O(lg n)</li>
+          <li>Build Max Heap: O(n)</li>
+          <li>Heap Sort: O(n lg n)</li>
         </ul>
       </Tab.Pane> },
     ];
