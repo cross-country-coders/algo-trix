@@ -8,9 +8,9 @@ export default class RedBlack extends React.Component {
     return (
       <div>
         <div className='red'>
-          <Header as = 'h2' textAlign='center' inverted>Single Source Shortest Paths</Header>
+          <Header as = 'h2' textAlign='center' inverted>Red Black Trees</Header>
           <Container textAlign={'center'}>
-              Why take the long route when you can take the shortest route in life.
+              Color creates diversity ... what about in algorithms and red and black trees.
           </Container>
           <br/>
         </div>
