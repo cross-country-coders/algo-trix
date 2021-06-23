@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Header } from 'semantic-ui-react';
+import { Tab } from 'semantic-ui-react';
 
 class RedBlackPractice extends React.Component {
   render() {
